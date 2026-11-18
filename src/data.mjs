@@ -22,7 +22,7 @@ export const eventGuide = {
   checked: '2026-11-18',
   checkedLabel: 'November 18, 2026',
   sources: {
-    toro: 'https://www.chicagoparkdistrict.com/events/toro-nagashi-lantern-ceremony-jackson-park-0',
+    toro: 'https://daiyuzenji.org/special-events/2026/8/6/toro-nagashi-lantern-ceremony-at-jackson-park',
     birds: 'https://chicagobirdalliance.org/upcoming-events',
     earthDay: 'https://www.chicagoparkdistrict.com/events/earth-day-park-clean-jackson-0',
     chosenFew: 'https://chosenfewdjs.com/',

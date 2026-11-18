@@ -40,7 +40,6 @@
 .lantern-program-list li>span { font-size:11px; color:var(--muted); }
 .lantern-program-list h3 { font-size:26px; margin:10px 0 14px; }
 .lantern-program-list p { font-size:13px; margin-bottom:14px; }
-.lantern-admission-note { font-size:12px; max-width:65em; margin:12px 0; color:var(--muted); }
 .lantern-location { display:grid; grid-template-columns:1fr 1.3fr; gap:60px; align-items:center; padding-block:60px; }
 .lantern-location h2 { font-size:clamp(34px,3.5vw,48px); }
 .lantern-location p { font-size:13px; }

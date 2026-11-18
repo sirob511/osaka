@@ -47,3 +47,6 @@ No explicitly reusable photograph of the Chicago ceremony was verified. Organize
 Admission update found during independent review
 https://daiyuzenji.org/special-events/2026/8/6/toro-nagashi-lantern-ceremony-at-jackson-park
 The participating temple’s 2026 listing explicitly states that attendance is first come, first served and registration is no longer required, superseding the original registration instruction reproduced in the Park District listing. The page now displays this updated entry arrangement, describes capacity as limited without repeating the earlier numeric cap, and links both notices. Avoid calling the garden’s 2023 inaugural event Chicago’s first-ever lantern ceremony.
+
+Public source link correction — November 18, 2026
+The user reported the Park District event URL inaccessible; a repeat request also returned 403. All public links now use the working Daiyuzenji 2026 event notice above. Link labels and credits identify the temple correctly. The obsolete registration-history paragraph was removed; the displayed past program retains first-come entry. Lantern-supply assertions absent from the working notice were removed, so public program details can be checked against that source. The Park District URL remains here only as a historical research record.

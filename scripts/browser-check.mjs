@@ -85,7 +85,7 @@ try {
       evaluate('document.fonts.ready.then(() => true)');
       evaluate('document.querySelectorAll("img").forEach(image => image.loading = "eager")');
       browser('wait', '--fn', 'Array.from(document.images).every(image => image.complete && image.naturalWidth > 0)');
-      const state = evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,headings:document.querySelectorAll('h1').length,js:document.documentElement.classList.contains('js'),fonts:document.fonts.check('16px Shojumaru')&&document.fonts.check('18px "Zen Old Mincho"')&&document.fonts.check('16px "DM Sans"')})`);
+      const state = evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,headings:document.querySelectorAll('h1').length,js:document.documentElement.classList.contains('js'),fonts:document.fonts.check('16px "Yuji Syuku"')&&document.fonts.check('24px Italiana')&&document.fonts.check('18px "Zen Old Mincho"')&&document.fonts.check('16px "DM Sans"')})`);
       assert.equal(state.overflow, false, `Horizontal overflow on ${route} at ${width}px`);
       assert.equal(state.headings, 1, route);
       assert.equal(state.js, true, `Script not running on ${route}`);

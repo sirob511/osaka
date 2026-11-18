@@ -29,7 +29,6 @@ export const lanternPage = {
         ${hotspot('lantern-parts', 'water', 3, 'On the water', 'Paper lanterns float on a small base.')}
         <div class="lantern-art-note" aria-hidden="true"><span>Tōrō nagashi</span><strong>“Lantern floating”</strong></div>
       </div>
-      <figcaption class="lantern-key"><p class="small-note">An illustrated guide to the tradition. Chicago’s lanterns and arrangements depend on the organizers.</p></figcaption>
     </figure>
     <aside class="lantern-attend" aria-labelledby="ceremony-info-title"><h2 id="ceremony-info-title">Join the <em>ceremony.</em></h2><p>Find dates, admission, lantern availability, and event access in the organizers’ announcements.</p>${link(lanternSources.calendar, 'Daiyuzenji event calendar', 'button dark')}<a class="subtle-link" href="${eventGuide.sources.parkEvents}">Park District calendar ↗</a><a class="lantern-participation-link" href="#chicago-program">Taking part ↓</a></aside>
   </section>

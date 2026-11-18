@@ -278,6 +278,9 @@ a svg {
   position:relative;
   padding:10px 0
 }
+.site-header .nav-visit {
+  display:none
+}
 .site-header nav a:after {
   content:'';
   position:absolute;
@@ -1182,6 +1185,9 @@ a svg {
 @media(max-width:1320px) {
   .header-visit {
     display:none
+  }
+  .site-header .nav-visit {
+    display:block
   }
 }
 @media(max-width:1100px) {

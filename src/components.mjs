@@ -1,0 +1,32 @@
+import { site } from './data.mjs';
+
+export const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+export const arrow = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.4"/></svg>';
+export const flower = '<svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.2"><path d="M32 29C14 15 25 1 32 9c7-8 18 6 0 20Z"/><path d="M35 31C43 10 60 17 54 26c10 4 1 20-19 5Z"/><path d="M34 35C56 36 55 54 44 51c-1 11-19 7-10-16Z"/><path d="M29 35C35 57 17 60 15 49c-11 3-15-15 14-14Z"/><path d="M28 30C9 43 0 27 11 23c-5-10 12-17 17 7Z"/><circle cx="32" cy="32" r="3"/></g></svg>';
+export const logo = `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true"><circle cx="26" cy="26" r="23" stroke="currentColor" stroke-width="1"/><path d="M9 32Q26 10 43 32M10 36Q26 16 42 36M15 27v7m7-12v7m8-7v7m7-2v7M9 40c5-3 8 3 13 0s8 3 13 0 6 0 8 0" stroke="currentColor" stroke-width="1.2"/><circle cx="28" cy="12" r="2" fill="currentColor"/></svg>`;
+export function link(href, text, type = 'text-link') { return `<a class="${type}" href="${escape(href)}">${text}${arrow}</a>`; }
+export function photo(name, alt, { priority = false, className = '', sizes = '(max-width: 700px) 100vw, 50vw' } = {}) {
+  return `<img class="${className}" src="/images/${name}.webp" srcset="/images/${name}-720.webp 720w, /images/${name}.webp 1600w" sizes="${sizes}" alt="${escape(alt)}" width="1600" height="${name === 'garden-path' ? 2173 : name === 'garden-bridge' ? 900 : 1200}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+}
+export function sourceNote(keys = ['garden']) {
+  const names = { garden: 'Park District visitor information', blossoms: 'Park District bloom reports', history: 'Garden of the Phoenix Foundation', designs: 'Foundation design history', museum: 'Chicago History Museum' };
+  return `<aside class="source-note"><span class="eyebrow">Our sources</span><p>Checked <time datetime="${site.checked}">${site.checkedLabel}</time>. ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}. This independent guide is updated by hand; check official notices before traveling.</p></aside>`;
+}
+export function pageIntro(kicker, title, description, extra = '') {
+  return `<section class="page-intro wrap"><a class="breadcrumb" href="/">The garden ${arrow}</a><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="intro-description">${description}</p>${extra}</section>`;
+}
+export function visitCta() {
+  return `<section class="visit-cta wrap"><div class="cta-flower">${flower}</div><p class="eyebrow">A little closer than you think</p><h2>Find your moment<br>of <em>quiet.</em></h2><p>On a small island in Jackson Park,<br>a different pace of Chicago awaits.</p>${link('/visit/', 'Plan your visit', 'button dark')}</section>`;
+}
+export function layout({ path, title, description, content, className = '', imageName = 'garden-pond', noindex = false }) {
+  const nav = [['/', 'Explore'], ['/visit/', 'Visit'], ['/cherry-blossoms/', 'Cherry Blossoms'], ['/history/', 'History'], ['/updates/', 'Updates']];
+  const canonical = site.origin + path;
+  const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url: canonical, dateModified: site.checked, isPartOf: { '@type': 'WebSite', name: site.name, url: site.origin }, about: { '@type': 'TouristAttraction', name: 'Osaka Garden', alternateName: 'Garden of the Phoenix', address: { '@type': 'PostalAddress', streetAddress: '5900 S. Cornell Dr.', addressLocality: 'Chicago', addressRegion: 'IL', postalCode: '60637', addressCountry: 'US' }, isAccessibleForFree: true } };
+  return `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f5ed"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><link rel="canonical" href="${canonical}">${noindex ? '<meta name="robots" content="noindex">' : ''}<meta property="og:type" content="website"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${site.origin}/images/${imageName}.webp"><meta property="og:site_name" content="${site.name}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preload" href="/fonts/italiana.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/styles.css"><script src="/main.js" defer></script><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>
+<body id="top" class="${className}"><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="/" aria-label="Osaka Garden Chicago home">${logo}<span>Osaka Garden<small>CHICAGO · AN INDEPENDENT GUIDE</small></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button><nav id="primary-nav" aria-label="Main navigation">${nav.map(([href, name]) => `<a href="${href}"${path === href || (href !== '/' && path.startsWith(href)) ? ' aria-current="page"' : ''}>${name}</a>`).join('')}</nav><a class="header-visit" href="/visit/">Plan a visit ${arrow}</a></header>
+<main id="main">${content}</main>
+<footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="/">${logo}<span>Osaka Garden<small>A LITTLE WONDER IN CHICAGO.</small></span></a><p>A garden to discover.<br>A season to remember.</p><nav aria-label="Footer navigation"><a href="/visit/">Plan your visit</a><a href="/cherry-blossoms/2027/">2027 blossom tracker</a><a href="/updates/">The next chapter</a></nav></div><div class="footer-bottom"><p>An independent guide. Not affiliated with the Chicago Park District or the Garden of the Phoenix Foundation.</p><a href="/credits/">Sources & image credits</a><a href="#top" data-back-top>Back to top ↑</a></div></footer>
+</body></html>`;
+}

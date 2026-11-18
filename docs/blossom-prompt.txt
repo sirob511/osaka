@@ -1,0 +1,9 @@
+Asset: public/images/blossom-branch.webp
+Method: built-in OpenAI image_gen tool, followed by WebP compression.
+Purpose: decorative botanical illustration, not a photograph or an observation of Jackson Park.
+
+Original generation prompt:
+Use case: illustration-story. Asset type: custom editorial botanical illustration for an elegant Osaka Garden Chicago independent website. A graceful Japanese cherry blossom branch, with delicate pale blush pink five-petaled blossoms, small muted olive leaves, and charcoal-brown slender branches, cascading diagonally from the upper right toward lower left. Fine watercolor and ink on warm ivory rice paper color #f5f1e8, subtle paper grain. Airy open composition, refined 19th century botanical plate sensibility, natural asymmetry, exquisite small stamens, tranquil and poetic, generous empty space. Landscape 3:2 aspect ratio. No text, no frame, no lettering, no logos. This is clearly an illustration, not a photograph and not a depiction of any location.
+
+Background-removal edit prompt:
+Edit this watercolor cherry blossom branch artwork. Remove only the beige paper background and make the background truly transparent. Preserve the entire branch, all pink blossoms, green leaves, their placement, fine ink strokes and watercolor paint textures. Preserve soft semitransparent watercolor edges. Do not add text, frames, objects, shadows, or change colors or composition. Output a transparent-background cutout of the botanical branch.

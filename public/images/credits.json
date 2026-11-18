@@ -119,5 +119,21 @@
     "smallWidth": 320,
     "smallHeight": 480,
     "alt": "The Obama Presidential Center’s stone museum tower, with large lettering near its top and visitors in the entrance courtyard."
+  },
+  {
+    "file": "history-phoenix-pavilion",
+    "format": "jpg",
+    "title": "The Phoenix Pavilion at the 1893 World’s Columbian Exposition",
+    "artist": "Charles Dudley Arnold and H. D. Higinbotham",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.en",
+    "source": "https://www.rijksmuseum.nl/en/collection/object/Gezicht-op-het-Japanse-paviljoen-op-de-Worlds-Columbian-Exposition-in-Chicago-in-1893--198dda9609dd4e507c4bec9c13eaf4bd",
+    "sourceName": "Rijksmuseum",
+    "width": 1280,
+    "height": 874,
+    "smallWidth": 640,
+    "smallHeight": 437,
+    "alt": "Visitors outside Japan’s Phoenix Pavilion on Wooded Island at the 1893 World’s Columbian Exposition.",
+    "changes": "Photograph isolated from the scanned book spread and resized to 1280px and 640px using the Rijksmuseum’s IIIF image service; original photographic tones retained. Collection object RP-F-2001-7-897-55."
   }
 ]

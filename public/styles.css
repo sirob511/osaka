@@ -962,43 +962,6 @@ a svg {
   padding:7px 12px;
   display:inline-block
 }
-.history-banner {
-  position:relative;
-  margin-bottom:0
-}
-.history-banner>img {
-  width:100%;
-  height:400px;
-  object-fit:cover;
-  object-position:center 35%;
-  filter:saturate(.85)
-}
-.timeline {
-  max-width:990px
-}
-.timeline article {
-  display:grid;
-  grid-template-columns:200px 1fr;
-  gap:70px;
-  padding:32px 0;
-  border-top:1px solid var(--line)
-}
-.timeline-year {
-  font-family:var(--serif);
-  font-size:54px;
-  color:#778568;
-  line-height:1
-}
-.timeline h3 {
-  font-size:34px;
-  margin-bottom:14px
-}
-.timeline p {
-  font-size:13px;
-  color:var(--muted);
-  max-width:590px;
-  margin:0
-}
 .history-closing {
   padding-bottom:0;
   text-align:center;
@@ -1409,13 +1372,6 @@ a svg {
   }
   .narrow-photo img {
     height:510px
-  }
-  .timeline article {
-    grid-template-columns:140px 1fr;
-    gap:45px
-  }
-  .timeline-year {
-    font-size:55px
   }
   .page-intro {
     column-gap:32px
@@ -1832,27 +1788,6 @@ a svg {
     height:430px
   }
   .blossom-etiquette>div:last-child {
-    font-size:12px
-  }
-  .history-banner {
-    height:auto
-  }
-  .history-banner>img {
-    height:270px;
-    object-position:56% center
-  }
-  .timeline article {
-    grid-template-columns:85px 1fr;
-    gap:22px;
-    padding-block:30px
-  }
-  .timeline-year {
-    font-size:42px
-  }
-  .timeline h3 {
-    font-size:29px
-  }
-  .timeline p {
     font-size:12px
   }
   .history-closing {

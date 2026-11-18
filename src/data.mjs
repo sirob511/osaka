@@ -30,12 +30,12 @@ export const eventGuide = {
 };
 
 export const timeline = [
-  ['1893', 'A friendship takes root', 'Japan’s Phoenix Pavilion is dedicated on Wooded Island for the World’s Columbian Exposition. The pavilion remains as a gift to Chicago after the fair.'],
-  ['1935', 'A garden for wandering', 'A restored pavilion and new Japanese stroll garden open, bringing water, stone, and winding paths into a small landscape.'],
-  ['1946', 'Loss, and a long quiet', 'Arson destroys the Phoenix Pavilion. The garden declines in the years that follow.'],
-  ['1981', 'The garden returns', 'Landscape architect Kaneji Domoto’s restoration opens, renewing the island’s Japanese garden.'],
-  ['1993', 'The Osaka connection', 'The garden takes the Osaka name, marking twenty years of Chicago’s sister-city relationship with Osaka.'],
-  ['2016', 'A new expression of peace', 'Yoko Ono’s SKYLANDING, a sculpture of twelve rising petals, is dedicated beside the garden.']
+  ['1893', 'The Phoenix Pavilion', 'Japan’s Phoenix Pavilion is dedicated on Wooded Island for the World’s Columbian Exposition. The pavilion remains as a gift to Chicago after the fair.'],
+  ['1935', 'A Japanese stroll garden', 'A restored pavilion and new Japanese stroll garden open, bringing water, stone, and winding paths into a small landscape.'],
+  ['1946', 'The pavilion is lost', 'Arson destroys the Phoenix Pavilion. The garden declines in the years that follow.'],
+  ['1981', 'Restored by Kaneji Domoto', 'Landscape architect Kaneji Domoto’s restoration opens, renewing the island’s Japanese garden.'],
+  ['1993', 'The Osaka name', 'The garden takes the Osaka name, marking twenty years of Chicago’s sister-city relationship with Osaka.'],
+  ['2016', 'Yoko Ono’s SKYLANDING', 'Yoko Ono’s SKYLANDING, a sculpture of twelve rising petals, is dedicated beside the garden.']
 ];
 
 export const faqs = [

@@ -35,6 +35,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 - `src/data.mjs`: source URLs, modification metadata, event references, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
+- `src/history-page.mjs` and `public/history.css`: visual history timeline with selected archival and later photographs.
 - `src/lantern-page.mjs` and `public/lantern.css`: the dedicated Toro Nagashi guide and annotated lantern illustration.
 - `src/garden-details.mjs` and `public/garden-details.css`: the annotated garden view and compact homepage visual guides.
 - `src/park-map.mjs` and `public/park-map.css`: illustrated park explorer, sourced landmark facts, and responsive hotspot positions.
@@ -58,6 +59,8 @@ The canonical origin is configured in `src/data.mjs`; set it to the actual publi
 ## Assets
 
 Photographs show the actual Osaka Garden and Jackson Park landmarks at various dates, not current conditions. Attribution and license details are in `public/images/credits.json` and the generated credits page. Resized/cropped CC BY-SA images retain their stated share-alike license. License terms apply to the photographs independently of site code.
+
+The history timeline pairs three milestones with photographs. The public-domain 1893 Phoenix Pavilion image comes from the Rijksmuseum (RP-F-2001-7-897-55), isolated from its scanned book spread through the museum’s IIIF service. The garden and SKYLANDING captions identify their later photography dates so they are not mistaken for photographs taken at the milestone date. Provenance is in `docs/history-image-sources.json`.
 
 The decorative blossom watercolor and muted pine ink study were generated with the built-in OpenAI image tool. Their prompts and provenance are in `docs/blossom-prompt.txt` and `docs/ink-pine-prompt.txt`; the local assets are `public/images/blossom-branch.webp` and `public/images/ink-pine.webp`. Both are identified as illustrations, not location photography. The transparent pine artwork is a decorative background, kept away from the main text and reduced in opacity on mobile.
 

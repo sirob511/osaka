@@ -1,0 +1,53 @@
+.history-timeline-section { padding-top:10px; padding-bottom:58px }
+.history-timeline { --rail:144px; --gutter:46px; list-style:none; padding:0; margin:0; position:relative }
+.history-milestone { position:relative; display:grid; grid-template-columns:var(--rail) minmax(0,1fr); gap:var(--gutter); padding:28px 0 }
+.history-milestone:before { content:''; position:absolute; top:56px; bottom:-56px; left:var(--rail); width:1px; background:var(--line) }
+.history-milestone:last-child:before { display:none }
+.history-year { display:block; position:relative; align-self:start; font-family:var(--serif); font-size:58px; line-height:1; letter-spacing:-.04em; color:#66765c; padding-right:24px }
+.history-year:after { content:''; position:absolute; top:24px; right:-4px; width:8px; height:8px; border-radius:50%; background:#738368 }
+.history-milestone-content { min-width:0; padding:1px 0 26px; border-bottom:1px solid var(--line) }
+.history-milestone:last-child .history-milestone-content { border-bottom:0; padding-bottom:0 }
+.history-milestone-copy { max-width:590px }
+.history-milestone h2 { font-size:clamp(32px,3vw,42px); line-height:1.14; margin-bottom:14px }
+.history-milestone p { font-size:13px; line-height:1.85; color:var(--muted); margin:0; max-width:49ch }
+.history-milestone.has-image .history-milestone-content { display:grid; grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); align-items:start; gap:38px }
+.history-image { min-width:0 }
+.history-image img { width:100%; height:auto; display:block }
+.history-image figcaption { margin-top:9px; font-size:10px; line-height:1.6; color:var(--muted) }
+.history-page .garden-plans { padding-block:42px; column-gap:52px }
+.history-page .history-closing { padding-top:48px }
+@media(max-width:1100px) {
+  .history-timeline { --rail:116px; --gutter:32px }
+  .history-year { font-size:50px }
+  .history-year:after { top:20px }
+  .history-milestone:before { top:52px; bottom:-52px }
+  .history-milestone.has-image .history-milestone-content { gap:26px }
+}
+@media(max-width:1000px) {
+  .history-milestone.has-image .history-milestone-content { grid-template-columns:1fr; gap:22px }
+  .history-image { max-width:600px }
+  .history-milestone p { max-width:60ch }
+}
+@media(max-width:700px) {
+  .history-timeline-section { padding-top:0; padding-bottom:30px }
+  .history-timeline { --rail:4px }
+  .history-milestone:before { top:41px; bottom:-41px }
+  .history-milestone { display:block; padding:18px 0 18px 30px }
+  .history-year { font-size:42px; margin-bottom:16px; padding-right:0 }
+  .history-year:after { top:19px; left:-30px; right:auto }
+  .history-milestone-content { padding-bottom:24px }
+  .history-milestone h2 { font-size:32px; margin-bottom:12px }
+  .history-milestone p { font-size:13px; line-height:1.8 }
+  .history-image figcaption { font-size:10px; margin-top:8px }
+  .history-page .garden-plans { padding-block:30px; gap:18px; grid-template-columns:1fr }
+  .history-page .history-closing { padding-top:34px }
+}
+@media print {
+  .history-timeline-section { padding-bottom:20pt }
+  .history-milestone { break-inside:avoid }
+  .history-milestone:before,.history-year:after { display:none }
+  .history-timeline { --rail:70px; --gutter:20px }
+  .history-year { font-size:28pt }
+  .history-milestone h2 { font-size:24pt }
+  .history-milestone.has-image .history-milestone-content { grid-template-columns:1fr 1fr }
+}

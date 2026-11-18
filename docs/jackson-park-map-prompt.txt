@@ -12,6 +12,13 @@ References:
 Facts and sources are stored in src/park-map.mjs and linked from each place panel. Museum wording distinguishes the 1893 design from its later stone reconstruction. The Republic is the 1918 commemorative version, not the original fair statue. SKYLANDING is adjacent to and west of the garden, at the former Phoenix Pavilion site. No vanished pavilion is drawn as an existing building.
 Artwork reviewed against the reference for museum/basin/island/lake relationships and feature placement. Pins and fine leaders use positions in this particular illustration, not real-world coordinates. They are deliberately offset to remain selectable at small screen sizes. Decorative painted blossoms and sculptural petals are not inventories or counts. Current access information stays on Visit.
 
+Obama Presidential Center hotspot addition:
+- Official visitor information: https://www.obama.org/visit/
+- Official directions and campus map: https://www.obama.org/visit/getting-here/
+- The campus is on the mainland east of Stony Island Avenue and west of West Lagoon/Wooded Island. The illustration's western landscape is generalized; the hotspot marks the campus area, not an exact building entrance or walking route.
+- Leader anchor x18.5%, y62% is on that western mainland. The marker is offset to x15%, y85% to keep the seven targets separated on small screens. Do not move the anchor into the lagoon or onto Wooded Island.
+- The detail panel describes the museum, public art, gardens, and library, and links to official visitor guidance for changing hours, admission, and access. Its photograph shows the actual museum exterior; no current schedule or opening announcement is copied into the guide.
+
 Generation prompt:
 Use case: infographic-diagram
 Asset type: original illustrated map for an interactive Osaka Garden Chicago homepage, landscape 3:2, 1536 x 1024, opaque warm ivory paper.

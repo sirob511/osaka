@@ -37,7 +37,13 @@ export const parkPlaces = [
     x: 71, y: 80, pinX: 52, pinY: 84,
     fact: 'The 24-foot gilded bronze statue commemorates the 1893 World’s Fair. Installed in 1918, it is a smaller version of the fair’s original monument.',
     detail: 'Look farther south, at Hayes and Richards Drives. This landmark is beyond the garden and basin area.',
-    href: 'https://www.chicagoparkdistrict.com/parks-facilities/statue-republic', action: 'Read the monument’s story', source: 'https://www.chicagoparkdistrict.com/parks-facilities/statue-republic', sourceName: 'Chicago Park District' }
+    href: 'https://www.chicagoparkdistrict.com/parks-facilities/statue-republic', action: 'Read the monument’s story', source: 'https://www.chicagoparkdistrict.com/parks-facilities/statue-republic', sourceName: 'Chicago Park District' },
+  { id: 'obama-center', name: 'Obama Presidential Center', short: 'Obama Center', note: 'Museum, art & gardens', year: 'Museum & campus',
+    photo: { file: 'park-obama-center', alt: 'The Obama Presidential Center’s stone museum tower, with large lettering near its top and visitors in the entrance courtyard.', width: 640, height: 960, smallWidth: 320, fit: 'contain' },
+    x: 18.5, y: 62, pinX: 15, pinY: 85,
+    fact: 'A museum exploring Barack and Michelle Obama’s lives and the presidency anchors a campus of public art, gardens, and a Chicago Public Library branch.',
+    detail: 'Find the campus west of Wooded Island, along Stony Island Avenue. Check the Center’s official guide for hours, tickets, and access.',
+    href: 'https://www.obama.org/visit/', action: 'Plan a Center visit', source: 'https://www.obama.org/visit/', sourceName: 'Obama Foundation' }
 ];
 
 export function parkMap() {
@@ -46,7 +52,7 @@ export function parkMap() {
     <div class="park-explorer" data-park-explorer>
       <div class="park-map-figure">
         <div class="park-map-canvas">
-          <img src="/images/jackson-park-map.webp" srcset="/images/jackson-park-map-768.webp 768w, /images/jackson-park-map.webp 1536w" sizes="(max-width: 800px) calc(100vw - 44px), (max-width: 1100px) 65vw, 980px" width="1536" height="1024" alt="Watercolor map of Jackson Park, north at the top. The museum and Columbian Basin lie north of Wooded Island. Osaka Garden and SKYLANDING sit close together on the island; Bobolink Meadow is across the lagoon to the east, and the Statue of the Republic is farther south. Lake Michigan borders the east." fetchpriority="high" decoding="async">
+          <img src="/images/jackson-park-map.webp" srcset="/images/jackson-park-map-768.webp 768w, /images/jackson-park-map.webp 1536w" sizes="(max-width: 800px) calc(100vw - 44px), (max-width: 1100px) 65vw, 980px" width="1536" height="1024" alt="Watercolor map of Jackson Park, north at the top. The museum and Columbian Basin lie north of Wooded Island. Osaka Garden and SKYLANDING sit close together on the island; Bobolink Meadow is across the lagoon to the east, the Statue of the Republic is farther south, and the Obama Presidential Center campus lies west of the island across the lagoon. Lake Michigan borders the east." fetchpriority="high" decoding="async">
           <svg class="park-map-leaders" viewBox="0 0 100 66.6667" aria-hidden="true">${parkPlaces.map((p, i) => `<g data-map-leader="${p.id}"${i === 0 ? ' class="is-selected"' : ''}><path d="M${p.x} ${p.y * 2 / 3} L${p.pinX} ${p.pinY * 2 / 3}"/><circle cx="${p.x}" cy="${p.y * 2 / 3}" r=".4"/></g>`).join('')}</svg>
           <div class="park-pins" aria-label="Places on the map">${parkPlaces.map((p, i) => `<button type="button" class="park-pin${p.pinX > 55 ? ' park-pin-right' : ''}" style="--pin-x:${p.pinX}%;--pin-y:${p.pinY}%" data-park-place="${p.id}" aria-label="Explore ${escape(p.name)}" aria-controls="park-place-${p.id}" aria-pressed="${i === 0}" disabled><span class="park-pin-number">${i + 1}</span><span class="park-pin-label"><strong>${p.short}</strong><small>${p.note}</small></span></button>`).join('')}</div>
         </div>

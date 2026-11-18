@@ -50,7 +50,7 @@ try {
 
   browser('set', 'viewport', '390', '900');
   browser('open', origin + '/');
-  for (const place of ['skylanding', 'museum', 'basin', 'meadow', 'republic', 'garden']) {
+  for (const place of ['skylanding', 'museum', 'basin', 'meadow', 'republic', 'obama-center', 'garden']) {
     click(`[data-park-place="${place}"]`);
     assert.equal(evaluate('document.querySelector(".park-place:not([hidden])").id'), `park-place-${place}`);
     assert.equal(evaluate('document.querySelector("#park-place-picker").value'), place);
@@ -59,7 +59,7 @@ try {
   browser('press', 'ArrowRight');
   assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'skylanding');
   browser('press', 'End');
-  assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'republic');
+  assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'obama-center');
   browser('press', 'Home');
   assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'garden');
   browser('select', '#park-place-picker', 'skylanding');
@@ -69,7 +69,7 @@ try {
   browser('network', 'route', origin + '/main.js', '--abort');
   browser('open', origin + '/?fallback-check=1');
   assert.equal(evaluate('document.documentElement.classList.contains("js")'), false);
-  assert.equal(evaluate('[...document.querySelectorAll(".park-place")].filter(panel=>getComputedStyle(panel).display!=="none").length'), 6);
+  assert.equal(evaluate('[...document.querySelectorAll(".park-place")].filter(panel=>getComputedStyle(panel).display!=="none").length'), 7);
   browser('network', 'unroute', origin + '/main.js');
   console.log('PASS map hotspots, keyboard selection, place picker, reduced motion, and script-free facts.');
 

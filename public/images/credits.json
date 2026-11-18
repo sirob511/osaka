@@ -105,5 +105,19 @@
     "alt": "Steel lotus petals of Yoko Ono’s SKYLANDING rising from the grass on Wooded Island in Jackson Park.",
     "artworkCreator": "Yoko Ono",
     "changes": "Resized to 640px and 320px widths and compressed to WebP; cropped where needed in page layouts. These versions retain the source license."
+  },
+  {
+    "file": "park-obama-center",
+    "title": "Obama Center south elevation (opening day) - Chicago, IL - June 2026.jpg",
+    "artist": "AlphaBeta135",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Obama_Center_south_elevation_(opening_day)_-_Chicago,_IL_-_June_2026.jpg",
+    "changes": "Resized to 640px and 320px widths and compressed to WebP; original composition retained without cropping or color changes.",
+    "width": 640,
+    "height": 960,
+    "smallWidth": 320,
+    "smallHeight": 480,
+    "alt": "The Obama Presidential Center’s stone museum tower, with large lettering near its top and visitors in the entrance courtyard."
   }
 ]

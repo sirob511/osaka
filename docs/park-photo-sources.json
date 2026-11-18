@@ -50,6 +50,24 @@
     "identityNote": "The Commons description identifies the museum on the Jackson Park lagoon; coordinates and the visible south portico support the location. The photograph predates the Griffin naming signage and is a view of the same Chicago museum building."
   },
   {
+    "file": "park-obama-center",
+    "title": "Obama Center south elevation (opening day) - Chicago, IL - June 2026.jpg",
+    "artist": "AlphaBeta135",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Obama_Center_south_elevation_(opening_day)_-_Chicago,_IL_-_June_2026.jpg",
+    "changes": "Resized to 640px and 320px widths and compressed to WebP; original composition retained without cropping or color changes.",
+    "width": 640,
+    "height": 960,
+    "smallWidth": 320,
+    "smallHeight": 480,
+    "alt": "The Obama Presidential Center’s stone museum tower, with large lettering near its top and visitors in the entrance courtyard.",
+    "objectPosition": "50% 40%",
+    "photographDate": "2026-06-19",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Obama_Center_south_elevation_%28opening_day%29_-_Chicago%2C_IL_-_June_2026.jpg/960px-Obama_Center_south_elevation_%28opening_day%29_-_Chicago%2C_IL_-_June_2026.jpg",
+    "identityNote": "The Commons photographer identifies this as their own photograph of the completed Obama Presidential Center Museum’s south elevation on opening day, June 19, 2026. The image shows the full tower and entrance courtyard. The file’s licensing section explicitly dedicates the photograph to the public domain under CC0 1.0. The 960px Commons thumbnail was downloaded and visually inspected; this is an actual photograph, not a rendering."
+  },
+  {
     "file": "park-republic",
     "title": "The Golden Lady of Jackson Park",
     "artist": "artistmac",

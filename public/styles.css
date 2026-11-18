@@ -829,6 +829,13 @@ a svg {
 .blossom-map {
   margin-bottom:36px
 }
+@media screen and (min-width:901px) {
+  .blossom-map>figure {
+    /* Preserve the 3:2 artwork and leave room for the header, intro, and caption. */
+    width:min(100%,960px,calc(150svh - 480px));
+    margin-inline:auto
+  }
+}
 .map-artwork {
   display:block;
   color:var(--ink);

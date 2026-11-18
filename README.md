@@ -35,6 +35,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 - `src/data.mjs`: source URLs, editorial review dates, event references, bloom record, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
+- `src/garden-details.mjs` and `public/garden-details.css`: the annotated garden view and compact homepage visual guides.
 - `src/park-map.mjs` and `public/park-map.css`: illustrated park explorer, sourced landmark facts, and responsive hotspot positions.
 - `src/components.mjs`: shared navigation, footer, image markup, metadata, and structured data.
 - `public/styles.css`: responsive visual system, print styles, and reduced-motion support.

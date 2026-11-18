@@ -1,0 +1,134 @@
+.garden-details h2 {
+  margin-bottom:28px;
+  font-size:clamp(34px,3.5vw,48px)
+}
+.garden-details-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(230px,.32fr);
+  gap:36px;
+  align-items:center
+}
+.garden-details-image {
+  position:relative;
+  min-width:0
+}
+.garden-details-image img {
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9
+}
+.garden-detail-marker {
+  position:absolute;
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  transform:translate(-50%,-50%);
+  border:1px solid var(--green);
+  border-radius:50%;
+  background:var(--cream);
+  box-shadow:0 0 0 4px #f7f5ed5e;
+  color:var(--green);
+  font-size:12px;
+  font-weight:600;
+  line-height:1;
+  pointer-events:none
+}
+.garden-detail-marker-bridge { left:31%; top:52% }
+.garden-detail-marker-pond { left:69%; top:79% }
+.garden-detail-marker-shore { left:65%; top:54% }
+.garden-details-key {
+  display:grid;
+  gap:25px;
+  margin:0;
+  padding:0;
+  list-style:none
+}
+.garden-details-key li {
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr);
+  gap:12px;
+  align-items:start
+}
+.garden-detail-number {
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  color:var(--green);
+  font-size:10px;
+  font-weight:600;
+  line-height:1
+}
+.garden-details-key h3 {
+  margin-bottom:8px;
+  font-size:26px;
+  line-height:1.12
+}
+.garden-details-key p {
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.75
+}
+@media(max-width:1100px) {
+  .garden-details-layout { gap:28px }
+  .garden-details-key { gap:18px }
+  .garden-details-key h3 { font-size:24px }
+}
+@media(max-width:900px) {
+  .garden-details-layout { grid-template-columns:1fr; gap:25px }
+  .garden-details-key { grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px }
+  .garden-details-key li { grid-template-columns:1fr; gap:10px }
+}
+@media(max-width:650px) {
+  .garden-details h2 { margin-bottom:20px }
+  .garden-details-key { grid-template-columns:1fr; gap:18px }
+  .garden-details-key li { grid-template-columns:24px minmax(0,1fr); gap:12px }
+  .garden-details-key h3 { font-size:25px; margin-bottom:5px }
+  .garden-details-key p { font-size:12px }
+  .garden-detail-marker { width:26px; height:26px; font-size:10px; box-shadow:0 0 0 3px #f7f5ed5e }
+}
+@media print {
+  .garden-details { break-inside:avoid }
+  .garden-details-layout { grid-template-columns:minmax(0,1fr) minmax(150px,.4fr); gap:20px }
+  .garden-details-key { display:grid; grid-template-columns:1fr; gap:15px }
+  .garden-details-key li { grid-template-columns:24px minmax(0,1fr); gap:10px }
+  .garden-details-key h3 { font-size:15pt }
+  .garden-details-key p { font-size:9pt }
+}
+
+/* The homepage's two other visual guides: tree locations and a short chronology. */
+.home .blossom-grid { min-height:0; padding-block:56px; grid-template-columns:1fr 1.35fr; gap:60px }
+.home .blossom-copy { padding-left:0 }
+.home .blossom-copy h2 { font-size:clamp(38px,4.1vw,58px) }
+.blossom-preview { display:block; box-shadow:0 14px 40px #6a594d0c; transition:box-shadow .2s }
+.blossom-preview:hover { box-shadow:0 14px 40px #6a594d24 }
+.blossom-preview img { width:100%; height:auto }
+.home-history-heading { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:30px }
+.home-history-heading h2 { font-size:clamp(34px,3.5vw,48px); margin:0 }
+.home-history-heading>.text-link { font-size:11px }
+.home-history ol { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; list-style:none; margin:0; padding:0; border-top:1px solid var(--line) }
+.home-history li { position:relative; padding-top:25px }
+.home-history li:before { content:''; position:absolute; top:-4px; left:0; width:7px; height:7px; border-radius:50%; background:#87927a }
+.home-history time { font-family:var(--serif); font-size:38px; line-height:1; color:#8b795a }
+.home-history li p { font-size:12px; color:var(--muted); max-width:300px; margin:14px 0 0 }
+@media(max-width:800px) {
+  .home .blossom-grid { grid-template-columns:1fr; gap:28px; padding-block:40px }
+  .home .blossom-copy h2 br { display:none }
+  .home .blossom-copy>p { max-width:520px }
+  .home .status-label { margin:20px 0 }
+}
+@media(max-width:520px) {
+  .home-history-heading { display:block; margin-bottom:25px }
+  .home-history-heading>.text-link { margin-top:15px }
+  .home-history ol { grid-template-columns:1fr; gap:0; border-top:0; border-left:1px solid var(--line); margin-left:4px }
+  .home-history li { display:grid; grid-template-columns:64px 1fr; gap:14px; padding:0 0 28px 20px }
+  .home-history li:last-child { padding-bottom:0 }
+  .home-history li:before { top:10px; left:-4px }
+  .home-history time { font-size:29px }
+  .home-history li p { margin:0 }
+}
+@media(prefers-reduced-motion:reduce) { .blossom-preview { transition:none } }

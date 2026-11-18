@@ -20,7 +20,7 @@ export const parkPlaces = [
   { id: 'basin', name: 'Columbian Basin', short: 'Cherry blossoms', note: 'Around the Columbian Basin', year: 'Spring',
     x: 35.8, y: 24.6, pinX: 14, pinY: 32,
     fact: 'The basin’s banks are the heart of Jackson Park’s cherry blossom display. More trees grow beside the museum and on northern Wooded Island.',
-    detail: 'The bloom window changes with the weather. Use the tree-area map and dated reports to plan a spring visit.',
+    detail: 'The bloom window changes with the weather. Use the tree-area map and official bloom updates to plan a spring visit.',
     href: '/cherry-blossoms/', action: 'Find the cherry trees', source: 'https://www.chicagoparkdistrict.com/cherry-blossoms', sourceName: 'Chicago Park District' },
   { id: 'meadow', name: 'Bobolink Meadow', short: 'Bobolink Meadow', note: 'Birds & prairie habitat', year: 'Nature',
     x: 59.9, y: 55.6, pinX: 78, pinY: 59,

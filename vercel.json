@@ -5,6 +5,7 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/updates/", "destination": "/history/#garden-plans", "permanent": true }
+    { "source": "/updates/", "destination": "/history/#garden-plans", "permanent": true },
+    { "source": "/cherry-blossoms/2027/", "destination": "/cherry-blossoms/#bloom-updates", "permanent": true }
   ]
 }

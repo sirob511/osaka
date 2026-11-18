@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { build, root } from '../scripts/build.mjs';
-import { bloom, site } from '../src/data.mjs';
+import { site } from '../src/data.mjs';
 
 let routes;
 const dist = join(root, 'dist');
@@ -50,14 +50,20 @@ test('all internal links, anchors, responsive images, fonts, and scripts resolve
   for (const match of css.matchAll(/url\('([^']+)'\)/g)) assert((await stat(join(dist, match[1]))).isFile());
 });
 
-test('future bloom tracker never substitutes historical observations for live data', async () => {
-  const html = await load('/cherry-blossoms/2027/');
-  assert.equal(bloom.observationDate, null);
-  assert.equal(bloom.peakDate, null);
-  assert.match(html, /PRE-SEASON · NO OBSERVATION YET/);
-  assert.match(html, /Previous season · For context only/);
-  assert.match(html, /historical report, not a forecast for 2027/);
-  assert.match(html, /Reports are updated by hand/);
+test('retired seasonal bookmarks lead to evergreen guidance without remaining in navigation', async () => {
+  const retiredPath = '/cherry-blossoms/2027/';
+  assert(!routes.includes(retiredPath));
+  await assert.rejects(stat(join(dist, retiredPath, 'index.html')), { code: 'ENOENT' });
+  assert(!(await readFile(join(dist, 'sitemap.xml'), 'utf8')).includes(retiredPath));
+  const config = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
+  const redirect = config.redirects.find(rule => rule.source === retiredPath);
+  assert.equal(redirect?.permanent, true, 'Seasonal bookmarks must retain a permanent destination');
+  const destination = new URL(redirect.destination, site.origin);
+  assert.equal(destination.pathname + destination.hash, '/cherry-blossoms/#bloom-updates');
+  assert((await load(destination.pathname)).includes(`id="${destination.hash.slice(1)}"`));
+  for (const path of routes) {
+    assert(!(await load(path)).includes(`href="${retiredPath}`), `Retired tracker linked on ${path}`);
+  }
 });
 
 test('sitemap covers every public page and the error page is not indexed', async () => {

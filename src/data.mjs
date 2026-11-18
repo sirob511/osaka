@@ -1,9 +1,7 @@
-// Editorial records are deliberately dated. Never infer a live observation from a calendar date.
+// Keep visitor guidance evergreen. Link to organizers for changing schedules and conditions.
 export const site = {
   name: 'Osaka Garden Chicago',
   origin: 'https://osakagardenchicago.org',
-  checked: '2026-11-17',
-  checkedLabel: 'November 17, 2026',
   modified: '2026-11-18',
   address: '5900 S. Cornell Dr., Chicago, IL 60637',
   maps: 'https://www.google.com/maps/dir/?api=1&destination=Osaka+Garden+5900+S+Cornell+Dr+Chicago',
@@ -19,28 +17,16 @@ export const site = {
 };
 
 export const eventGuide = {
-  checked: '2026-11-18',
-  checkedLabel: 'November 18, 2026',
   sources: {
-    toro: 'https://daiyuzenji.org/special-events/2026/8/6/toro-nagashi-lantern-ceremony-at-jackson-park',
+    toro: 'https://daiyuzenji.org/special-events',
     birds: 'https://chicagobirdalliance.org/upcoming-events',
-    earthDay: 'https://www.chicagoparkdistrict.com/events/earth-day-park-clean-jackson-0',
+    earthDay: 'https://www.chicagoparkdistrict.com/earth-day',
     chosenFew: 'https://chosenfewdjs.com/',
     halfMarathon: 'https://www.chicagohalfmarathon.com/',
     parkEvents: 'https://www.chicagoparkdistrict.com/events',
     expansion: 'https://www.chicagoparksfoundation.org/osakagarden',
     vision: 'https://www.gardenofthephoenix.org/vision-130'
   }
-};
-
-export const bloom = {
-  year: 2027,
-  status: 'Awaiting the first report',
-  shortStatus: '2027 season ahead',
-  observationDate: null,
-  peakDate: null,
-  description: 'No dated 2027 bloom report was available when this guide was checked. A peak bloom date has not been confirmed.',
-  previousReport: { date: '2026-04-14', label: 'April 14, 2026', description: 'The Park District reported most trees past full bloom.' }
 };
 
 export const timeline = [
@@ -57,6 +43,6 @@ export const faqs = [
   ['Are Osaka Garden and Garden of the Phoenix the same place?', 'The names are closely connected. Osaka Garden is the Japanese garden on Wooded Island; Garden of the Phoenix also refers to the historic site and the foundation that supports it.'],
   ['Can I bring a stroller, bicycle, or pet?', 'The garden’s published rules exclude strollers, bicycles, and dogs. Pets are also prohibited on Wooded Island. Contact garden staff about specific access needs or service-animal arrangements.'],
   ['Can I take photos or have a picnic inside?', 'The garden’s everyday visitor rules prohibit photography, picnics, and events. Separately, the Park District may announce organized cultural programs with their own entry arrangements. Follow the specific listing and posted rules; an official program is not permission to hold your own event.'],
-  ['Do I need a reservation?', 'The garden limits entry to 50 visitors at a time. The Park District asks groups larger than five to request a group visit through its official garden page.'],
+  ['Do I need a reservation?', 'For current entry arrangements and group visit requests, check the <a href="https://www.chicagoparkdistrict.com/parks-facilities/osaka-garden">Park District’s garden page</a>. Cultural events may have separate registration requirements.'],
   ['How long should I allow?', 'Our suggestion: allow 30–45 minutes for a slow garden visit, or 60–90 minutes when adding the lagoon and blossom walk. These are planning estimates, not official tour durations.']
 ];

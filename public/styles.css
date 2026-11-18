@@ -412,26 +412,6 @@ a svg {
   color:#64685e;
   line-height:1.95
 }
-.status-label {
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:9px;
-  margin:30px 0 25px;
-  flex-wrap:wrap
-}
-.status-label>span:first-child,.status-dot {
-  width:6px;
-  height:6px;
-  background:#7b825b;
-  display:inline-block;
-  border-radius:50%;
-  flex-shrink:0
-}
-.status-divider {
-  color:#a6988b;
-  margin:0 3px
-}
 .subtle-link {
   display:flex;
   align-items:center;
@@ -907,7 +887,7 @@ a svg {
 .map-source>.text-link {
   flex-shrink:0
 }
-.tracker-callout {
+.bloom-updates {
   display:flex;
   justify-content:space-between;
   gap:40px;
@@ -915,22 +895,16 @@ a svg {
   padding:32px 40px;
   background:var(--pink)
 }
-.tracker-callout .eyebrow {
-  display:inline-block;
-  font-size:9px;
-  margin-left:8px;
-  margin-bottom:15px
-}
-.tracker-callout h3 {
+.bloom-updates h2 {
   font-size:32px;
   margin-bottom:10px
 }
-.tracker-callout p {
+.bloom-updates p {
   font-size:11px;
   color:var(--muted);
   margin:0
 }
-.tracker-callout>.button {
+.bloom-updates>.button {
   flex-shrink:0
 }
 .editorial-grid {
@@ -975,17 +949,6 @@ a svg {
 .blossom-etiquette+.source-note {
   margin-top:0
 }
-.tracker-board {
-  background:var(--pink);
-  display:grid;
-  grid-template-columns:1.15fr 1fr;
-  padding:50px;
-  gap:30px;
-  overflow:hidden
-}
-.tracker-main>.eyebrow {
-  margin-bottom:15px
-}
 .status-tag {
   font-size:8px;
   letter-spacing:.12em;
@@ -994,103 +957,6 @@ a svg {
   border-radius:20px;
   padding:7px 12px;
   display:inline-block
-}
-.tracker-main h2 {
-  font-size:48px;
-  margin:28px 0 20px
-}
-.tracker-main>p {
-  font-size:13px;
-  color:var(--muted)
-}
-.tracker-facts {
-  margin:30px 0
-}
-.tracker-facts>div {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-size:11px;
-  border-top:1px solid #dacec4;
-  padding-block:12px
-}
-.tracker-facts dd {
-  margin:0;
-  text-align:right
-}
-.tracker-facts dt {
-  color:var(--muted)
-}
-.tracker-art {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center
-}
-.tracker-art .botanical {
-  width:125%;
-  max-width:125%;
-  height:380px;
-  flex-shrink:0
-}
-.bloom-stages {
-  list-style:none;
-  padding:0;
-  margin:55px 0 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:30px
-}
-.bloom-stages li {
-  border-top:1px solid var(--line);
-  padding-top:25px
-}
-.bud-icon {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:45px;
-  height:45px;
-  border:1px solid var(--line);
-  border-radius:50%;
-  font-size:28px;
-  color:#899779;
-  margin-bottom:20px
-}
-.bloom-stages h3 {
-  font-size:24px
-}
-.bloom-stages p {
-  font-size:11px;
-  color:var(--muted)
-}
-.report-log {
-  padding-bottom:70px
-}
-.report-log>article {
-  display:grid;
-  grid-template-columns:170px 1fr;
-  gap:35px;
-  padding:35px 0;
-  border-top:1px solid var(--line)
-}
-.report-log time {
-  font-size:10px;
-  letter-spacing:.08em;
-  color:var(--muted)
-}
-.report-log article .eyebrow {
-  font-size:8px;
-  margin-bottom:12px
-}
-.report-log h3 {
-  font-size:30px;
-  margin-bottom:14px
-}
-.report-log article p {
-  font-size:13px;
-  max-width:700px;
-  color:var(--muted)
 }
 .history-banner {
   position:relative;
@@ -1347,20 +1213,6 @@ a svg {
   .blossom-etiquette {
     gap:60px
   }
-  .tracker-board {
-    padding:35px;
-    grid-template-columns:1.25fr 1fr
-  }
-  .tracker-main h2 {
-    font-size:42px
-  }
-  .tracker-facts>div {
-    flex-direction:column;
-    gap:0
-  }
-  .tracker-facts dd {
-    text-align:left
-  }
   .event-feature {
     gap:50px
   }
@@ -1536,14 +1388,14 @@ a svg {
   .accessibility-section {
     gap:40px
   }
-  .tracker-callout {
+  .bloom-updates {
     padding:28px;
     gap:25px
   }
-  .tracker-callout h3 {
+  .bloom-updates h2 {
     font-size:27px
   }
-  .tracker-callout .button {
+  .bloom-updates .button {
     font-size:10px;
     gap:20px;
     padding-inline:17px
@@ -1553,23 +1405,6 @@ a svg {
   }
   .narrow-photo img {
     height:510px
-  }
-  .tracker-main h2 {
-    font-size:37px
-  }
-  .tracker-art .botanical {
-    height:300px
-  }
-  .tracker-main .button {
-    gap:20px;
-    font-size:10px;
-    padding-inline:17px
-  }
-  .bloom-stages {
-    gap:20px
-  }
-  .bloom-stages h3 {
-    font-size:23px
   }
   .timeline article {
     grid-template-columns:140px 1fr;
@@ -1752,10 +1587,6 @@ a svg {
   .blossom-copy>p:not(.eyebrow) {
     font-size:13px;
     max-width:none
-  }
-  .status-label {
-    font-size:8px;
-    margin:23px 0
   }
   .blossom-copy .button {
     font-size:11px;
@@ -1971,19 +1802,19 @@ a svg {
   .source-note p {
     font-size:9px
   }
-  .tracker-callout {
+  .bloom-updates {
     flex-direction:column;
     align-items:start;
     gap:20px;
     padding:25px
   }
-  .tracker-callout h3 {
+  .bloom-updates h2 {
     font-size:29px
   }
-  .tracker-callout p {
+  .bloom-updates p {
     font-size:11px
   }
-  .tracker-callout .button {
+  .bloom-updates .button {
     font-size:10px;
     min-height:49px;
     padding:12px 18px
@@ -2003,68 +1834,6 @@ a svg {
     height:430px
   }
   .blossom-etiquette>div:last-child {
-    font-size:12px
-  }
-  .tracker-board {
-    grid-template-columns:1fr;
-    padding:28px;
-    gap:0
-  }
-  .tracker-main h2 {
-    font-size:39px
-  }
-  .tracker-main>p {
-    font-size:12px
-  }
-  .tracker-facts>div {
-    flex-direction:row;
-    font-size:10px;
-    gap:18px
-  }
-  .tracker-facts dd {
-    text-align:right
-  }
-  .tracker-main .button {
-    font-size:10px;
-    gap:15px;
-    padding:14px 16px;
-    min-height:50px
-  }
-  .tracker-art .botanical {
-    height:270px;
-    width:110%;
-    max-width:110%
-  }
-  .bloom-stages {
-    grid-template-columns:1fr 1fr;
-    gap:25px 22px;
-    margin-top:30px
-  }
-  .bloom-stages h3 {
-    font-size:24px;
-    margin-bottom:12px
-  }
-  .bloom-stages p {
-    font-size:11px
-  }
-  .report-log {
-    padding-bottom:45px
-  }
-  .report-log>h2 {
-    font-size:40px
-  }
-  .report-log>article {
-    grid-template-columns:1fr;
-    gap:13px;
-    padding-block:25px
-  }
-  .report-log time {
-    font-size:8px
-  }
-  .report-log h3 {
-    font-size:28px
-  }
-  .report-log article p {
     font-size:12px
   }
   .history-banner {
@@ -2268,7 +2037,6 @@ html:not(.js) [role=tabpanel] {
   }
 }
 .events-list .section-heading>p:last-child { max-width:650px; font-size:13px; color:var(--muted) }
-.event-record strong { color:var(--ink); font-weight:500 }
 .event-calendar-links { display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:18px }
 .garden-plans { display:grid; grid-template-columns:1fr 1.5fr; gap:64px; border-block:1px solid var(--line) }
 .garden-plans h2 { font-size:clamp(34px,4vw,50px) }

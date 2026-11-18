@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 
 const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/visit/', '/cherry-blossoms/', '/cherry-blossoms/2027/', '/history/', '/events/', '/toro-nagashi/', '/credits/'];
+const routes = ['/', '/visit/', '/cherry-blossoms/', '/history/', '/events/', '/toro-nagashi/', '/credits/'];
 const sessionBase = `osaka-qa-${process.pid}`;
 function browser(...args) {
   const result = JSON.parse(execFileSync('agent-browser', ['--session', sessionBase, '--json', ...args], { encoding: 'utf8', timeout: 45000 }));
@@ -41,7 +41,7 @@ try {
           assert(!(a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y), `Overlapping map targets ${i}/${j} at ${width}px`);
         }
       }
-      if (['/', '/visit/', '/cherry-blossoms/2027/', '/toro-nagashi/'].includes(route) && width !== 320) {
+      if (['/', '/visit/', '/cherry-blossoms/', '/toro-nagashi/'].includes(route) && width !== 320) {
         browser('screenshot', '--full', `test-results/${route === '/' ? 'home' : route.replaceAll('/', '-')}-${width}.png`);
       }
       console.log(`PASS ${width}px ${route}`);
@@ -75,6 +75,9 @@ try {
 
   browser('open', origin + '/updates/');
   assert.equal(evaluate('location.pathname + location.hash'), '/history/#garden-plans');
+  browser('open', origin + '/cherry-blossoms/2027/');
+  assert.equal(evaluate('location.pathname + location.hash'), '/cherry-blossoms/#bloom-updates');
+  assert.equal(evaluate('document.querySelector(location.hash) !== null'), true);
   browser('open', origin + '/visit/');
   browser('set', 'media', 'light', 'reduced-motion');
   assert.equal(evaluate('matchMedia("(prefers-reduced-motion: reduce)").matches'), true);
@@ -123,7 +126,7 @@ try {
   click('.not-found .button');
   assert.equal(evaluate('location.pathname'), '/');
 
-  console.log('PASS mobile navigation, keyboard tabs, FAQs, clipboard outcomes, HTTP responses, 404 recovery, and reduced motion.');
+  console.log('PASS retired-page redirects, mobile navigation, keyboard tabs, FAQs, clipboard outcomes, HTTP responses, 404 recovery, and reduced motion.');
 } finally {
   browser('close');
 }

@@ -24,17 +24,16 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 ## Pages
 
 - `/` — interactive illustrated park map and main journeys
-- `/visit/` — seasonal hours, directions, parking, access guidance, and FAQ
+- `/visit/` — directions, parking, access guidance, FAQ, and official visitor updates
 - `/cherry-blossoms/` — evergreen blossom guide
-- `/cherry-blossoms/2027/` — dated seasonal notebook
-- `/toro-nagashi/` — lantern ceremony tradition, Chicago program, location map, and next-edition status
+- `/toro-nagashi/` — lantern ceremony tradition, Chicago gathering, location map, and organizer links
 - `/history/` — selective history timeline and a short, sourced project note
-- `/events/` — recurring Jackson Park traditions, organizer links, and explicitly labeled dates
+- `/events/` — recurring Jackson Park traditions and organizer links
 - `/credits/` — sources, image licenses, and independence statement
 
 ## Editing and maintenance
 
-- `src/data.mjs`: source URLs, editorial review dates, event references, bloom record, timeline, and FAQ.
+- `src/data.mjs`: source URLs, modification metadata, event references, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
 - `src/lantern-page.mjs` and `public/lantern.css`: the dedicated Toro Nagashi guide and annotated lantern illustration.
 - `src/garden-details.mjs` and `public/garden-details.css`: the annotated garden view and compact homepage visual guides.
@@ -43,13 +42,11 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 - `public/styles.css`: responsive visual system, print styles, and reduced-motion support.
 - `public/main.js`: accessible navigation, keyboard-operated directions tabs, clipboard feedback, and back-to-top behavior. Core content remains available without JavaScript.
 
-Visitor information was checked **November 17, 2026**. The garden’s own Park District page takes precedence over older general park and blossom pages for operating hours. Hours are Chicago local time; they must be rechecked before publishing a seasonal update. Do not label this guide “live.”
+Keep visitor-facing guidance evergreen: explain typical seasons, recurring traditions, locations, and what visitors can expect. Link to the Park District or event organizer for changing hours, closures, dates, registration, and bloom conditions. Do not publish year-specific trackers, expired event programs, or next-edition placeholders. Meaningful historical dates belong in the garden's story; internal research and review dates remain useful for maintenance. The full policy is in `docs/evergreen-content-policy.txt`.
 
-The 2027 tracker deliberately starts with no observation date or confirmed peak date. Record an observation only when a dated source supports it, and distinguish the source’s report date from this site’s editorial review date. The April 14, 2026 report is historical context. Replace seasonal copy and the tracker’s visible stage only after reviewing the source; changing `bloom` alone does not update all editorial prose.
+The garden’s own Park District page takes precedence over older general park and blossom pages for operating hours. Event-specific admission and participation rules can differ from ordinary visiting rules, so direct visitors to the organizer's current instructions. No automatic calendar or update service is configured; do not label this guide “live.”
 
-Events and revitalization sources were reviewed November 18, 2026; the evidence and editorial decisions are recorded in `docs/events-and-revitalization-review.txt`. `/updates/` is retired and permanently redirects to `/history/#garden-plans` in Vercel and the local server. Configure that redirect when deploying to another static host. The main navigation now links to `/events/`. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Keep visitor notices on Visit.
-
-The event guide separates recurring traditions, past editions, and organizer-announced future dates. Do not roll event dates forward automatically or treat an old festival listing as a new announcement. Event-specific garden admission can differ from ordinary visiting rules. No automatic calendar or update service is configured. The dedicated `/toro-nagashi/` page follows the same rule: its 2026 program is historical, and no 2027 date is verified. Research and cultural sources are recorded in `docs/toro-nagashi-research.txt`.
+Retired pages permanently redirect in Vercel and the local server: `/updates/` to `/history/#garden-plans`, and `/cherry-blossoms/2027/` to `/cherry-blossoms/#bloom-updates`. Configure the same redirects when deploying to another static host. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Research records remain in `docs/events-and-revitalization-review.txt` and `docs/toro-nagashi-research.txt`.
 
 The canonical origin is configured in `src/data.mjs`; set it to the actual public origin before hosting elsewhere.
 
@@ -59,7 +56,7 @@ Photographs show the actual Osaka Garden at various dates, not current condition
 
 The decorative blossom watercolor and muted pine ink study were generated with the built-in OpenAI image tool. Their prompts and provenance are in `docs/blossom-prompt.txt` and `docs/ink-pine-prompt.txt`; the local assets are `public/images/blossom-branch.webp` and `public/images/ink-pine.webp`. Both are identified as illustrations, not location photography. The transparent pine artwork is a decorative background, kept away from the main text and reduced in opacity on mobile.
 
-The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Keep current bridge access and bloom conditions in the dated page text; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
+The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Direct visitors to official sources for current bridge access and bloom conditions; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
 
 The homepage park map uses `public/images/jackson-park-map.webp` and its responsive 768px variant. Its prompt and geography review are in `docs/jackson-park-map-prompt.txt`. Hotspot positions are relative to this exact uncropped 3:2 artwork. Keep labels and facts in HTML, and re-check pin placement if changing the image. The map represents selected garden-area and central-park landmarks, not current access or a walking route. All six source-linked facts remain visible when JavaScript is unavailable; animation stops after two cycles and is disabled for reduced motion.
 
@@ -69,6 +66,6 @@ Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM
 
 ## Checks
 
-`npm test` builds the site and checks route metadata, unique headings and IDs, structured data, internal links and anchors, assets and font references, the sitemap, 404 indexing, photo attribution, and the distinction between future and historical bloom data. Browser QA should also cover phone widths, keyboard navigation, the directions tabs, clipboard-denied feedback, and the no-JavaScript fallback.
+`npm test` builds the site and checks route metadata, unique headings and IDs, structured data, internal links and anchors, assets and font references, the sitemap, 404 indexing, photo attribution, and retirement of the seasonal tracker. Browser QA should also cover phone widths, keyboard navigation, the directions tabs, clipboard-denied feedback, and the no-JavaScript fallback.
 
-Optional: with `agent-browser` and Chromium installed, start the preview and run `npm run test:browser`. It checks every route at 1440, 390, and 320 pixels, then exercises map hotspots, keyboard selection, the place picker, script-free map facts, navigation, keyboard tabs, FAQs, clipboard success/denial, HTTP status codes, 404 recovery, and reduced motion. Screenshots go to ignored `test-results/`. Set `PREVIEW_URL` if the preview uses another port, and `AGENT_BROWSER_EXECUTABLE_PATH` if Chromium is installed in a custom location. Check the no-JavaScript fallback separately by disabling page JavaScript in browser settings and reloading `/visit/`; the navigation and all three directions sections should remain visible.
+Optional: with `agent-browser` and Chromium installed, start the preview and run `npm run test:browser`. It checks every route at 1440, 390, and 320 pixels, then exercises map hotspots, keyboard selection, the place picker, script-free map facts, retired-page redirects, navigation, keyboard tabs, FAQs, clipboard success/denial, HTTP status codes, 404 recovery, and reduced motion. Screenshots go to ignored `test-results/`. Set `PREVIEW_URL` if the preview uses another port, and `AGENT_BROWSER_EXECUTABLE_PATH` if Chromium is installed in a custom location. Check the no-JavaScript fallback separately by disabling page JavaScript in browser settings and reloading `/visit/`; the navigation and all three directions sections should remain visible.

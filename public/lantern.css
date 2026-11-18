@@ -14,13 +14,12 @@
 .lantern-key strong { display:block; font-size:12px; }
 .lantern-key li p { font-size:11px; color:var(--muted); margin:5px 0 0; }
 .lantern-key>.small-note { font-size:10px; margin:18px 0 0; }
-.lantern-next { padding:30px 0 0; }
-.lantern-next h2 { font-size:clamp(36px,3.6vw,52px); margin-bottom:22px; }
-.lantern-next p { font-size:14px; max-width:34em; margin-bottom:18px; }
-.lantern-next .button { padding:15px 19px; gap:16px; margin-top:4px; }
-.lantern-next .subtle-link { margin:15px 0; }
-.lantern-next .small-note { font-size:11px; }
-.lantern-past-link { display:block; font-size:12px; text-decoration:none; border-top:1px solid var(--line); padding-top:18px; margin-top:23px; }
+.lantern-attend { padding:30px 0 0; }
+.lantern-attend h2 { font-size:clamp(36px,3.6vw,52px); margin-bottom:22px; }
+.lantern-attend p { font-size:14px; max-width:34em; margin-bottom:18px; }
+.lantern-attend .button { padding:15px 19px; gap:16px; margin-top:4px; }
+.lantern-attend .subtle-link { margin:15px 0; }
+.lantern-participation-link { display:block; font-size:12px; text-decoration:none; border-top:1px solid var(--line); padding-top:18px; margin-top:23px; }
 .lantern-meaning { padding-block:64px; }
 .lantern-meaning .section-heading { margin-bottom:30px; }
 .lantern-meaning-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:42px; }
@@ -28,15 +27,9 @@
 .lantern-meaning-grid p { font-size:13px; margin-bottom:15px; }
 .lantern-meaning-grid a { display:block; font-size:11px; margin-top:8px; }
 .lantern-program { background:var(--paper); padding-block:48px; }
-.lantern-program-heading { display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:end; }
-.lantern-program-heading .eyebrow { margin-bottom:12px; }
+.lantern-program-heading { margin-bottom:30px; }
 .lantern-program-heading h2 { margin-bottom:0; font-size:clamp(34px,3.5vw,48px); }
-.lantern-program-heading p { font-size:13px; margin-bottom:0; }
-.lantern-event-facts { display:grid; grid-template-columns:repeat(3,1fr); border-block:1px solid #cdd3c3; margin:30px 0; padding-block:20px; gap:24px; }
-.lantern-event-facts dt { font-size:10px; text-transform:uppercase; letter-spacing:.12em; margin-bottom:7px; color:var(--muted); }
-.lantern-event-facts dd { margin:0; font-size:16px; }
-.lantern-event-facts dd span { display:block; font-size:12px; color:var(--muted); }
-.lantern-program-list { display:grid; grid-template-columns:repeat(3,1fr); gap:38px; padding:0; list-style:none; }
+.lantern-program-list { display:grid; grid-template-columns:repeat(3,1fr); gap:38px; padding:0; margin-bottom:0; list-style:none; }
 .lantern-program-list li>span { font-size:11px; color:var(--muted); }
 .lantern-program-list h3 { font-size:26px; margin:10px 0 14px; }
 .lantern-program-list p { font-size:13px; margin-bottom:14px; }
@@ -53,40 +46,32 @@
 .lantern-location-garden { left:43.75%; top:51%; }
 .lantern-location-skylanding { left:35.7%; top:46.1%; }
 .lantern-location-map figcaption { font-size:11px; text-align:right; margin-top:8px; }
-.lantern-planning { border-top:1px solid var(--line); padding-block:40px 0; display:grid; grid-template-columns:1fr 1.3fr; gap:60px; }
-.lantern-planning h2 { font-size:34px; }
-.lantern-planning p { font-size:13px; }
-.lantern-planning-links { display:flex; flex-wrap:wrap; gap:20px; }
 @media (max-width:1100px) {
   .lantern-lead { gap:28px; grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr); }
-  .lantern-next { padding-top:8px; }
+  .lantern-attend { padding-top:8px; }
   .lantern-key ol { gap:10px; }
   .lantern-key li { display:block; }
   .lantern-key li>span { margin-bottom:8px; }
   .lantern-meaning-grid { gap:25px; }
-  .lantern-location,.lantern-planning { gap:35px; }
+  .lantern-location { gap:35px; }
 }
 @media (max-width:800px) {
   .lantern-lead { grid-template-columns:1fr; gap:30px; }
   .lantern-art-note span { font-size:clamp(24px,5vw,36px); }
-  .lantern-next { border-block:1px solid var(--line); padding:25px 0; }
-  .lantern-next h2 br { display:none; }
-  .lantern-next h2 { font-size:36px; }
-  .lantern-next .small-note { margin-bottom:0; }
+  .lantern-attend { border-block:1px solid var(--line); padding:25px 0; }
+  .lantern-attend h2 { font-size:36px; }
   .lantern-key li { display:flex; }
   .lantern-meaning { padding-block:38px; }
   .lantern-meaning-grid { grid-template-columns:1fr; gap:28px; }
   .lantern-meaning-grid h3 { margin-bottom:14px; }
   .lantern-program { padding-block:35px; }
-  .lantern-program-heading,.lantern-location,.lantern-planning { grid-template-columns:1fr; gap:22px; }
+  .lantern-location { grid-template-columns:1fr; gap:22px; }
   .lantern-program-list { grid-template-columns:1fr; gap:18px; }
   .lantern-program-list li { display:flex; gap:18px; }
   .lantern-program-list li>span { padding-top:5px; }
   .lantern-program-list h3 { margin-top:0; }
   .lantern-location { padding-block:38px; }
   .lantern-location-map { max-width:620px; width:100%; }
-  .lantern-planning { padding-top:30px; }
-  .lantern-planning h2 { margin-bottom:0; }
 }
 @media (max-width:480px) {
   .lantern-art-note { left:6%; top:22%; max-width:38%; }
@@ -97,7 +82,4 @@
   .lantern-key li>span { margin:0; }
   .lantern-key li p { margin-top:2px; font-size:12px; }
   .lantern-key strong { font-size:13px; }
-  .lantern-event-facts { grid-template-columns:1fr; gap:15px; }
-  .lantern-event-facts>div { display:grid; grid-template-columns:90px 1fr; gap:12px; }
-  .lantern-event-facts dt { padding-top:5px; }
 }

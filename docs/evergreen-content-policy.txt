@@ -1,0 +1,45 @@
+Osaka Garden Chicago — evergreen content policy
+Editorial decision: November 18, 2026
+
+Purpose
+Keep the guide useful between visits and seasons. Explain the garden, its
+history, typical seasonal patterns, recurring gatherings, and practical
+orientation. Let the organizations responsible for the garden and its events
+publish changing operational details.
+
+Visitor-facing copy
+- Use general seasonal guidance and qualify variable bloom timing.
+- Link to official Park District information for hours, closures, access,
+  and current blossom conditions.
+- Link to organizer calendars or evergreen event pages for dates, programs,
+  registration, capacity, and event-specific participation instructions.
+- Do not repeat a past edition's date, hours, registration requirement, or
+  capacity as a summary of what a visitor should expect next.
+- Avoid dated trackers, annual placeholder pages, “last listed” summaries,
+  and unannounced-next-year notices. Do not claim live reporting.
+- Preserve historical years when they explain the garden, artwork, or
+  origins of a tradition. Historical facts are distinct from event listings.
+- Keep links descriptive so visitors know where to find updates. A dated
+  source can still support a historical fact; it should not be presented as
+  the source for current scheduling or visitor instructions.
+
+Maintenance records
+Retain research dates, source notes, image provenance, and metadata needed
+for editorial maintenance. They do not need to become visible status
+messages throughout the site. Check changing source links when editing the
+relevant page, and favor the organization responsible for the information.
+
+Retired pages
+The former /cherry-blossoms/2027/ tracker permanently redirects to
+/cherry-blossoms/#bloom-updates. It is no longer generated, linked in site
+navigation, or included in the sitemap. Vercel and the local preview server
+share redirect definitions in vercel.json. Other static hosts need equivalent
+redirect configuration.
+
+The older /updates/ redirect to /history/#garden-plans remains in place.
+
+Update destinations verified for this change
+- Lantern ceremony: https://daiyuzenji.org/special-events and the Park District event calendar. The JAF festival archive still showed older listings, so it is not the primary updates destination.
+- Earth Day: https://www.chicagoparkdistrict.com/earth-day replaces the old individual Jackson Park event listing.
+- Hours: https://www.chicagoparkdistrict.com/parks-facilities/osaka-garden
+- Bloom reports and access: https://www.chicagoparkdistrict.com/cherry-blossoms

@@ -9,6 +9,7 @@ export const site = {
   sources: {
     garden: 'https://www.chicagoparkdistrict.com/parks-facilities/osaka-garden',
     blossoms: 'https://www.chicagoparkdistrict.com/cherry-blossoms',
+    blossomMap: 'https://chiparks.maps.arcgis.com/apps/instant/imageryviewer/index.html?appid=c661f6243e4d4e5c81d8d9e57f82dc24',
     history: 'https://www.gardenofthephoenix.org/',
     designs: 'https://www.gardenofthephoenix.org/design-history',
     museum: 'https://www.chicagohistory.org/sakura-and-shinto-in-chicago/',

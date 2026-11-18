@@ -53,6 +53,8 @@ Photographs show the actual Osaka Garden at various dates, not current condition
 
 The decorative blossom watercolor and muted pine ink study were generated with the built-in OpenAI image tool. Their prompts and provenance are in `docs/blossom-prompt.txt` and `docs/ink-pine-prompt.txt`; the local assets are `public/images/blossom-branch.webp` and `public/images/ink-pine.webp`. Both are identified as illustrations, not location photography. The transparent pine artwork is a decorative background, kept away from the main text and reduced in opacity on mobile.
 
+The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Keep current bridge access and bloom conditions in the dated page text; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
+
 Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM Sans in `public/fonts/`.
 
 ## Checks

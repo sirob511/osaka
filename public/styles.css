@@ -1021,38 +1021,93 @@ a svg {
   max-width:850px;
   margin-bottom:0
 }
-.blossom-page-intro {
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  align-items:center;
-  gap:20px
+.blossom-page .page-intro:before {
+  background-image:url('/images/blossom-branch.webp');
+  opacity:.14
 }
-.blossom-page-intro .page-intro {
+.blossom-map {
+  margin-bottom:36px
+}
+.map-artwork {
   display:block;
+  color:var(--ink);
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:var(--cream)
+}
+.map-artwork img {
   width:100%;
-  padding-bottom:36px
+  height:auto
 }
-.blossom-page-intro .page-intro:before {
-  display:none
+.map-expand {
+  display:block;
+  padding:11px 18px;
+  border-top:1px solid var(--line);
+  text-align:right;
+  font-size:11px;
+  line-height:1.8
 }
-.blossom-page-intro .intro-summary {
-  margin-top:20px;
-  max-width:430px
+.map-artwork:hover .map-expand {
+  background:var(--paper);
+  color:var(--dark)
 }
-.blossom-page-intro figure {
+.map-caption {
+  display:flex;
+  justify-content:space-between;
+  gap:12px 28px;
+  padding-block:16px;
+  font-size:11px;
+  line-height:1.7;
+  color:var(--muted);
+  border-bottom:1px solid var(--line)
+}
+.map-key-dot {
+  display:inline-block;
+  width:11px;
+  height:11px;
+  margin-right:6px;
+  border-radius:50%;
+  background:#dcb3ae;
+  border:1px solid #ba8d87
+}
+.map-locations {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:36px;
+  padding-block:28px;
+  border-bottom:1px solid var(--line)
+}
+.map-locations .eyebrow {
+  font-size:9px;
+  margin-bottom:10px
+}
+.map-locations h2 {
+  font-size:30px;
+  margin-bottom:10px
+}
+.map-locations p {
+  margin:0;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--muted);
+  max-width:340px
+}
+.map-source {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:36px;
   padding-top:20px
 }
-.blossom-page-intro .botanical {
-  height:340px;
-  max-width:110%;
-  width:110%;
-  margin-left:-10%
-}
-.blossom-page-intro figcaption {
-  text-align:center;
-  font-size:9px;
+.map-source p {
+  max-width:940px;
+  font-size:11px;
+  line-height:1.8;
   color:var(--muted);
-  margin-top:10px
+  margin:0
+}
+.map-source>.text-link {
+  flex-shrink:0
 }
 .tracker-callout {
   display:flex;
@@ -1092,31 +1147,6 @@ a svg {
 }
 .editorial-grid strong {
   color:var(--ink)
-}
-.blossom-walk {
-  padding:55px 45px;
-  background:var(--paper)
-}
-.walk-stops {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:45px;
-  margin-bottom:25px
-}
-.walk-stops article>span {
-  font-size:10px;
-  display:block;
-  color:#73816b;
-  border-bottom:1px solid #cbd2be;
-  padding-bottom:20px;
-  margin-bottom:20px
-}
-.walk-stops h3 {
-  font-size:27px
-}
-.walk-stops p {
-  font-size:12px;
-  color:var(--muted)
 }
 .blossom-etiquette {
   display:grid;
@@ -1566,9 +1596,6 @@ a svg {
   .source-note {
     width:calc(100% - 80px)
   }
-  .blossom-page-intro h1 {
-    font-size:56px
-  }
   .editorial-grid {
     gap:60px
   }
@@ -1779,18 +1806,6 @@ a svg {
   .accessibility-section {
     gap:40px
   }
-  .blossom-page-intro {
-    grid-template-columns:1.2fr 1fr
-  }
-  .blossom-page-intro h1 {
-    font-size:48px
-  }
-  .blossom-page-intro .botanical {
-    height:300px
-  }
-  .blossom-page-intro .intro-description {
-    font-size:13px
-  }
   .tracker-callout {
     padding:28px;
     gap:25px
@@ -1802,15 +1817,6 @@ a svg {
     font-size:10px;
     gap:20px;
     padding-inline:17px
-  }
-  .blossom-walk {
-    padding:40px 30px
-  }
-  .walk-stops {
-    gap:28px
-  }
-  .walk-stops h3 {
-    font-size:24px
   }
   .blossom-etiquette {
     gap:40px
@@ -1860,6 +1866,28 @@ a svg {
   }
 }
 @media(max-width:650px) {
+  .map-caption,.map-source {
+    flex-direction:column;
+    align-items:start;
+    gap:10px
+  }
+  .map-locations {
+    grid-template-columns:1fr;
+    gap:22px;
+    padding-block:24px
+  }
+  .map-locations h2 {
+    font-size:27px
+  }
+  .map-locations p {
+    max-width:none
+  }
+  .map-source {
+    gap:16px
+  }
+  .map-expand {
+    padding:12px 14px
+  }
   .wrap {
     width:calc(100% - 44px)
   }
@@ -2309,29 +2337,6 @@ a svg {
   .source-note p {
     font-size:9px
   }
-  .blossom-page-intro {
-    grid-template-columns:1fr;
-    gap:0
-  }
-  .blossom-page-intro .page-intro {
-    padding-bottom:0
-  }
-  .blossom-page-intro h1 {
-    font-size:clamp(34px,9.8vw,46px)
-  }
-  .blossom-page-intro figure {
-    padding:0 0 22px
-  }
-  .blossom-page-intro .botanical {
-    height:220px;
-    margin:0;
-    width:100%;
-    max-width:100%
-  }
-  .blossom-page-intro figcaption {
-    font-size:8px;
-    margin-top:-10px
-  }
   .tracker-callout {
     flex-direction:column;
     align-items:start;
@@ -2355,25 +2360,6 @@ a svg {
   }
   .editorial-grid>div:last-child {
     font-size:13px
-  }
-  .blossom-walk {
-    padding:30px 25px
-  }
-  .walk-stops {
-    grid-template-columns:1fr;
-    gap:15px;
-    margin-bottom:15px
-  }
-  .walk-stops article>span {
-    padding-bottom:12px;
-    margin-bottom:15px
-  }
-  .walk-stops h3 {
-    font-size:28px;
-    margin-bottom:12px
-  }
-  .walk-stops p {
-    font-size:12px
   }
   .blossom-etiquette {
     grid-template-columns:1fr;

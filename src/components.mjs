@@ -9,7 +9,7 @@ export function photo(name, alt, { priority = false, className = '', sizes = '(m
   return `<img class="${className}" src="/images/${name}.webp" srcset="/images/${name}-720.webp 720w, /images/${name}.webp 1600w" sizes="${sizes}" alt="${escape(alt)}" width="1600" height="${name === 'garden-path' ? 2173 : name === 'garden-bridge' ? 900 : 1200}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 export function sourceNote(keys = ['garden']) {
-  const names = { garden: 'Park District visitor information', blossoms: 'Park District bloom reports', history: 'Garden of the Phoenix Foundation', designs: 'Foundation design history', museum: 'Chicago History Museum' };
+  const names = { garden: 'Park District visitor information', blossoms: 'Park District bloom reports', blossomMap: 'Park District cherry tree map', history: 'Garden of the Phoenix Foundation', designs: 'Foundation design history', museum: 'Chicago History Museum' };
   return `<aside class="source-note"><span class="eyebrow">Our sources</span><p>Checked <time datetime="${site.checked}">${site.checkedLabel}</time>. ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}. This independent guide is updated by hand; check official notices before traveling.</p></aside>`;
 }
 export function pageIntro(kicker, title, description, extra = '') {

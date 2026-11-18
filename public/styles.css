@@ -6,8 +6,8 @@
   font-display:swap
 }
 @font-face {
-  font-family:Italiana;
-  src:url('/fonts/italiana.woff2') format('woff2');
+  font-family:Shojumaru;
+  src:url('/fonts/shojumaru-latin.woff2') format('woff2');
   font-weight:400;
   font-style:normal;
   font-display:swap
@@ -30,7 +30,8 @@
   --pink:#f2e8e3;
   --gold:#a58b5d;
   --serif:'Zen Old Mincho',Georgia,serif;
-  --brand:Italiana,'Times New Roman',serif;
+  --display:Shojumaru,'Trebuchet MS',sans-serif;
+  --brand:var(--display);
   --sans:'DM Sans',Arial,sans-serif
 }
 * {
@@ -89,6 +90,8 @@ h1,h2,h3 {
   letter-spacing:-.035em
 }
 h1 {
+  font-family:var(--display);
+  letter-spacing:0;
   font-size:clamp(58px,7.2vw,106px);
   margin-bottom:30px
 }
@@ -101,7 +104,7 @@ h3 {
   letter-spacing:-.025em
 }
 h1 em,h2 em {
-  font-family:var(--serif);
+  font-family:inherit;
   font-style:normal;
   font-weight:400;
   font-size:1em;
@@ -241,9 +244,9 @@ a svg {
 }
 .brand>span {
   font-family:var(--brand);
-  font-size:26px;
+  font-size:22px;
   line-height:1.15;
-  letter-spacing:-.025em
+  letter-spacing:0
 }
 .brand small {
   display:block;
@@ -255,12 +258,12 @@ a svg {
 }
 .site-header nav {
   display:flex;
-  gap:25px;
+  gap:20px;
   align-items:center
 }
 .site-header nav a {
-  font-family:var(--serif);
-  font-size:18px;
+  font-family:var(--display);
+  font-size:14px;
   line-height:1.35;
   letter-spacing:.01em;
   white-space:nowrap;
@@ -286,8 +289,8 @@ a svg {
   align-items:center;
   gap:18px;
   text-decoration:none;
-  font-family:var(--serif);
-  font-size:17px;
+  font-family:var(--display);
+  font-size:12px;
   line-height:1.3;
   white-space:nowrap;
   padding:12px 18px;
@@ -536,7 +539,7 @@ a svg {
   padding-bottom:18px
 }
 .footer-top .brand>span {
-  font-size:27px
+  font-size:22px
 }
 .footer-top .brand>svg {
   width:42px
@@ -592,8 +595,8 @@ a svg {
   pointer-events:none
 }
 .page-intro h1 {
-  font-size:clamp(42px,4.8vw,64px);
-  line-height:1.05;
+  font-size:clamp(28px,3.2vw,42px);
+  line-height:1.2;
   margin-bottom:0;
   max-width:760px
 }
@@ -1168,7 +1171,7 @@ a svg {
     padding-inline:0
   }
 }
-@media(max-width:1200px) {
+@media(max-width:1320px) {
   .header-visit {
     display:none
   }
@@ -1225,12 +1228,12 @@ a svg {
     gap:50px
   }
 }
-@media(max-width:900px) {
+@media(max-width:1100px) {
   .site-header {
     height:72px
   }
   .site-header .brand>span {
-    font-size:25px
+    font-size:22px
   }
   .site-header .brand>svg {
     width:37px;
@@ -1239,13 +1242,14 @@ a svg {
   .menu-toggle {
     display:flex;
     align-items:center;
+    min-height:44px;
     gap:14px;
     padding:13px 0 13px 13px;
     background:none;
     border:0;
     color:var(--green);
-    font-family:var(--serif);
-    font-size:18px;
+    font-family:var(--display);
+    font-size:13px;
     line-height:1.3
   }
   .menu-lines {
@@ -1286,13 +1290,15 @@ a svg {
     display:flex
   }
   .site-header nav a {
-    font-size:22px;
+    font-size:18px;
     padding-block:14px;
     border-bottom:1px solid var(--line)
   }
   .site-header nav a:after {
     display:none
   }
+}
+@media(max-width:900px) {
   .hero {
     height:580px;
     min-height:0;
@@ -1466,14 +1472,15 @@ a svg {
   .site-header {
     height:66px;
     width:calc(100% - 44px);
-    padding-inline:0
+    padding-inline:0;
+    gap:12px
   }
   .site-header .brand>svg {
     width:32px;
     height:32px
   }
   .site-header .brand>span {
-    font-size:23px
+    font-size:17px
   }
   .brand {
     gap:10px
@@ -1487,7 +1494,7 @@ a svg {
     padding-inline:23px
   }
   .menu-toggle {
-    font-size:17px;
+    font-size:12px;
     gap:9px
   }
   .menu-lines {
@@ -1673,7 +1680,7 @@ a svg {
     padding-bottom:14px
   }
   .footer-top .brand>span {
-    font-size:26px
+    font-size:22px
   }
   .footer-top .brand>svg {
     width:41px
@@ -1709,7 +1716,7 @@ a svg {
     opacity:.2
   }
   .page-intro h1 {
-    font-size:clamp(34px,9.8vw,46px);
+    font-size:clamp(22px,6.2vw,34px);
     margin-bottom:0
   }
   .intro-summary {
@@ -1958,7 +1965,7 @@ html:not(.nav-ready) .menu-toggle,html:not(.js) [role=tablist],html:not(.js) .co
 html:not(.js) [role=tabpanel] {
   margin-bottom:35px
 }
-@media(max-width:900px) {
+@media(max-width:1100px) {
   html:not(.nav-ready) .site-header {
     height:auto;
     flex-wrap:wrap;
@@ -2062,6 +2069,21 @@ html:not(.js) [role=tabpanel] {
 
 @view-transition {
   navigation:auto
+}
+@media(max-width:400px) {
+  .menu-toggle {
+    min-width:44px;
+    padding:12px;
+    justify-content:center
+  }
+  .menu-toggle>span:first-child {
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+    white-space:nowrap
+  }
 }
 ::view-transition-group(root) {
   animation:none

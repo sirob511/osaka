@@ -31,7 +31,7 @@ export const navigationScript = `(() => {
     }
   });
 
-  const desktop = matchMedia('(min-width: 901px)');
+  const desktop = matchMedia('(min-width: 1101px)');
   const closeOnDesktop = event => { if (event.matches) closeMenu(); };
   if (desktop.addEventListener) desktop.addEventListener('change', closeOnDesktop);
   else desktop.addListener(closeOnDesktop);

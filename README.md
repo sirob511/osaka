@@ -27,13 +27,13 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 - `/visit/` — seasonal hours, directions, parking, access guidance, and FAQ
 - `/cherry-blossoms/` — evergreen blossom guide
 - `/cherry-blossoms/2027/` — dated seasonal notebook
-- `/history/` — selective history timeline
-- `/updates/` — expansion, restoration, and visitor notices
+- `/history/` — selective history timeline and a short, sourced project note
+- `/events/` — recurring Jackson Park traditions, organizer links, and explicitly labeled dates
 - `/credits/` — sources, image licenses, and independence statement
 
 ## Editing and maintenance
 
-- `src/data.mjs`: source URLs, editorial review date, bloom record, timeline, and FAQ.
+- `src/data.mjs`: source URLs, editorial review dates, event references, bloom record, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
 - `src/components.mjs`: shared navigation, footer, image markup, metadata, and structured data.
 - `public/styles.css`: responsive visual system, print styles, and reduced-motion support.
@@ -43,7 +43,9 @@ Visitor information was checked **November 17, 2026**. The garden’s own Park D
 
 The 2027 tracker deliberately starts with no observation date or confirmed peak date. Record an observation only when a dated source supports it, and distinguish the source’s report date from this site’s editorial review date. The April 14, 2026 report is historical context. Replace seasonal copy and the tracker’s visible stage only after reviewing the source; changing `bloom` alone does not update all editorial prose.
 
-Expansion concepts, completed restoration, and visitor notices are presented separately. Do not infer construction milestones or an opening date from a concept plan. No automatic update service or schedule is configured.
+Events and revitalization sources were reviewed November 18, 2026; the evidence and editorial decisions are recorded in `docs/events-and-revitalization-review.txt`. `/updates/` is retired and permanently redirects to `/history/#garden-plans` in Vercel and the local server. Configure that redirect when deploying to another static host. The main navigation now links to `/events/`. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Keep visitor notices on Visit.
+
+The event guide separates recurring traditions, past editions, and organizer-announced future dates. Do not roll event dates forward automatically or treat an old festival listing as a new announcement. Event-specific garden admission can differ from ordinary visiting rules. No automatic calendar or update service is configured.
 
 The canonical origin is configured in `src/data.mjs`; set it to the actual public origin before hosting elsewhere.
 

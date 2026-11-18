@@ -20,7 +20,7 @@ export async function build() {
   }
   await writeFile(join(dist, '404.html'), layout(notFoundPage));
   await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.origin}/sitemap.xml\n`);
-  await writeFile(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${all.map(p => `<url><loc>${site.origin}${p.path}</loc><lastmod>${site.checked}</lastmod></url>`).join('')}</urlset>\n`);
+  await writeFile(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${all.map(p => `<url><loc>${site.origin}${p.path}</loc><lastmod>${site.modified}</lastmod></url>`).join('')}</urlset>\n`);
   return all.map(p => p.path);
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

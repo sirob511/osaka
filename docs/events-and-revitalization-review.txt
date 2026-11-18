@@ -1,0 +1,57 @@
+Editorial review: Osaka Garden plans and recurring Jackson Park events
+Reviewed November 18, 2026
+
+Decision
+Retire the stand-alone Updates page. Replace its navigation slot with Events, a selected guide to recurring traditions and organizer-announced dates. Preserve the limited project context on History, and redirect /updates/ to /history/#garden-plans. Seasonal access notices belong on Visit. Remove the expansion promotional strip from the home page.
+
+Revitalization evidence
+1. Chicago Park District, Osaka Garden visitor page:
+https://www.chicagoparkdistrict.com/parks-facilities/osaka-garden
+The Support the Garden section explicitly describes revitalization and expansion intended to nearly double the garden. This establishes an official initiative, not a rumor. The page does not publish an expansion budget, construction start date, or completion date.
+
+2. Chicago Parks Foundation, Osaka Garden campaign:
+https://www.chicagoparksfoundation.org/osakagarden
+Repeats the expansion ambition and identifies the Foundation as the 501(c)(3) fiscal partner with the Park District. This is a fundraising page, not a detailed construction progress report. It publishes no project budget, start date, or completion date. Do not confuse Chicago Parks Foundation with the separate Garden of the Phoenix Foundation.
+
+3. Garden of the Phoenix Foundation, Vision 130:
+https://www.gardenofthephoenix.org/vision-130
+Explicitly dates the guide to 2023; describes objectives, constraints, opportunities, and historic designs. Funding of a planning guide is not evidence that expansion construction is funded. Do not imply this is the final approved design for the current Parks Foundation campaign.
+
+4. Park District board release, March 13, 2024:
+https://www.chicagoparkdistrict.com/about-us/news/chicago-park-district-board-authorizes-agreements-deliver-investment-and-support
+Identifies a Clauss Brothers contract for Osaka Garden maintenance. Maintenance authorization is not proof of expansion construction. Search results also identify a 2025 extension for the same maintenance work. No claim about an expansion contract is made.
+
+5. Jackson Park Advisory Council community meeting, June 7, 2025:
+https://www.jacksonparkadvisorycouncil.org/event/japanese-garden-community-presentation/
+Invitation concerned garden conditions and security. It does not announce an expansion construction timetable.
+
+Research limits
+The findings concern the public pages and indexed official records reviewed, not an assertion that no internal plans, approvals, funding, or additional documents exist. A large current capital-plan PDF could not be reliably extracted and is not used as evidence. No organization was contacted on the user's behalf. No construction-start or funding-completion claim should be inferred from the word underway on promotional pages.
+
+Events selected
+Toro Nagashi: official Park District listing explicitly calls the ceremony annual; August 6, 2026 is a PAST edition. Registration and capacity applied to that edition. Do not carry its date, time, capacity, or registration link into 2027 without a new announcement.
+https://www.chicagoparkdistrict.com/events/toro-nagashi-lantern-ceremony-jackson-park-0
+Recurrence corroboration: August 6, 2025 listing from the park advisory council, and participating temple's July 18, 2026 account.
+https://www.jacksonparkadvisorycouncil.org/event/toro-nagashi-lantern-ceremony-2025/
+https://daiyuzenji.org/news/2026/7/18/honoring-remembrance-through-the-tradition-of-toro-nagashi
+
+Wooded Island bird walks: Chicago Bird Alliance's upcoming calendar and archive describe free Saturday walks, year-round and weather permitting, through Wooded Island and Bobolink Meadow. Calendar includes November and December 2026 outings. Link to the current calendar for start time and meeting point rather than freezing those details here.
+https://chicagobirdalliance.org/upcoming-events
+https://chicagobirdalliance.org/bird-walks-reports-archive
+
+Earth Day: Park District Jackson Park listing is April 18, 2026 (PAST), meeting at Hayes parking lot. JPAC's event archive lists April 26, 2025 cleanups at the harbor and 63rd Street Beach. The archive's 2026 range contains a contradictory 2025 end date, so use the direct Park District 2026 listing for the date. No 2027 date has been verified.
+https://www.chicagoparkdistrict.com/events/earth-day-park-clean-jackson-0
+https://www.jacksonparkadvisorycouncil.org/event_listing_category/in-the-park/
+
+Chosen Few Picnic & Festival: organizer announces July 10, 2027 in Jackson Park and describes the 37th annual event. Link to organizer for tickets and exact location; do not use historical copy to promise free entry. Date also corroborated by November 2026 reporting.
+https://chosenfewdjs.com/
+https://thetriibe.com/2026/11/chosen-few-djs-dropped-the-save-the-date-for-its-37th-annual-picnic/
+
+Life Time Chicago Half Marathon & 5K: organizer homepage announces September 26, 2027, general registration January 13, 2027, and Jackson Park start/finish for the half marathon. Do not conflate this event with the Chicago Marathon or the separate spring half marathon.
+https://www.chicagohalfmarathon.com/
+
+Other leads deliberately not promoted as guaranteed annual events
+The Foundation's history page lists Hanami, Kodomo-no-hi, Obon, Toro Nagashi and Tsukimi under a passage about 2023. That historical list cannot establish a current schedule. Guardians of the Earth and Sky has 2025 and 2026 listings, but is not needed to fill out this guide; the Park District calendar covers changing arts programming.
+
+Editorial rules
+Keep the page a curated guide, not a live feed. Label past editions, weekly recurrence, and announced future dates distinctly. Show a review date and direct organizer links. Official garden programs may have special entry rules; their existence does not authorize private events or override normal visitor restrictions. Do not create Event structured data for undated traditions. Existing garden photography shows the setting, not an event that was not photographed.

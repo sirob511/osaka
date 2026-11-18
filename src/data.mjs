@@ -4,6 +4,7 @@ export const site = {
   origin: 'https://osakagardenchicago.org',
   checked: '2026-11-17',
   checkedLabel: 'November 17, 2026',
+  modified: '2026-11-18',
   address: '5900 S. Cornell Dr., Chicago, IL 60637',
   maps: 'https://www.google.com/maps/dir/?api=1&destination=Osaka+Garden+5900+S+Cornell+Dr+Chicago',
   sources: {
@@ -14,6 +15,21 @@ export const site = {
     designs: 'https://www.gardenofthephoenix.org/design-history',
     museum: 'https://www.chicagohistory.org/sakura-and-shinto-in-chicago/',
     transit: 'https://www.transitchicago.com/planatrip/'
+  }
+};
+
+export const eventGuide = {
+  checked: '2026-11-18',
+  checkedLabel: 'November 18, 2026',
+  sources: {
+    toro: 'https://www.chicagoparkdistrict.com/events/toro-nagashi-lantern-ceremony-jackson-park-0',
+    birds: 'https://chicagobirdalliance.org/upcoming-events',
+    earthDay: 'https://www.chicagoparkdistrict.com/events/earth-day-park-clean-jackson-0',
+    chosenFew: 'https://chosenfewdjs.com/',
+    halfMarathon: 'https://www.chicagohalfmarathon.com/',
+    parkEvents: 'https://www.chicagoparkdistrict.com/events',
+    expansion: 'https://www.chicagoparksfoundation.org/osakagarden',
+    vision: 'https://www.gardenofthephoenix.org/vision-130'
   }
 };
 
@@ -40,7 +56,7 @@ export const faqs = [
   ['Is admission free?', 'Yes. The Park District lists free admission. Donations are optional; there is no required admission payment.'],
   ['Are Osaka Garden and Garden of the Phoenix the same place?', 'The names are closely connected. Osaka Garden is the Japanese garden on Wooded Island; Garden of the Phoenix also refers to the historic site and the foundation that supports it.'],
   ['Can I bring a stroller, bicycle, or pet?', 'The garden’s published rules exclude strollers, bicycles, and dogs. Pets are also prohibited on Wooded Island. Contact garden staff about specific access needs or service-animal arrangements.'],
-  ['Can I take photos or have a picnic inside?', 'The current garden rules prohibit photography, picnics, and events inside the garden. Follow posted signs and staff guidance. The wider Jackson Park blossom walk is a separate experience.'],
+  ['Can I take photos or have a picnic inside?', 'The garden’s everyday visitor rules prohibit photography, picnics, and events. Separately, the Park District may announce organized cultural programs with their own entry arrangements. Follow the specific listing and posted rules; an official program is not permission to hold your own event.'],
   ['Do I need a reservation?', 'The garden limits entry to 50 visitors at a time. The Park District asks groups larger than five to request a group visit through its official garden page.'],
   ['How long should I allow?', 'Our suggestion: allow 30–45 minutes for a slow garden visit, or 60–90 minutes when adding the lagoon and blossom walk. These are planning estimates, not official tour durations.']
 ];

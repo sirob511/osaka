@@ -3,5 +3,8 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/updates/", "destination": "/history/#garden-plans", "permanent": true }
+  ]
 }

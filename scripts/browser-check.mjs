@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 
 const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/visit/', '/cherry-blossoms/', '/cherry-blossoms/2027/', '/history/', '/updates/', '/credits/'];
+const routes = ['/', '/visit/', '/cherry-blossoms/', '/cherry-blossoms/2027/', '/history/', '/events/', '/credits/'];
 const sessionBase = `osaka-qa-${process.pid}`;
 function browser(...args) {
   const result = JSON.parse(execFileSync('agent-browser', ['--session', sessionBase, '--json', ...args], { encoding: 'utf8', timeout: 45000 }));
@@ -23,6 +23,7 @@ try {
     browser('set', 'viewport', String(width), '900');
     for (const route of routes) {
       browser('open', origin + route);
+      evaluate('document.fonts.ready.then(() => true)');
       evaluate('document.querySelectorAll("img").forEach(image => image.loading = "eager")');
       browser('wait', '--fn', 'Array.from(document.images).every(image => image.complete && image.naturalWidth > 0)');
       const state = evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,headings:document.querySelectorAll('h1').length,js:document.documentElement.classList.contains('js'),fonts:document.fonts.check('16px Italiana')&&document.fonts.check('16px "DM Sans"')})`);
@@ -38,6 +39,8 @@ try {
   }
 
   browser('set', 'viewport', '390', '900');
+  browser('open', origin + '/updates/');
+  assert.equal(evaluate('location.pathname + location.hash'), '/history/#garden-plans');
   browser('open', origin + '/visit/');
   browser('set', 'media', 'light', 'reduced-motion');
   assert.equal(evaluate('matchMedia("(prefers-reduced-motion: reduce)").matches'), true);

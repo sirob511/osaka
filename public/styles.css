@@ -605,7 +605,7 @@ a svg {
   color:var(--green);
   margin-top:6px
 }
-.updates-strip {
+.events-strip {
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   display:flex;
@@ -613,25 +613,25 @@ a svg {
   align-items:center;
   padding:34px 24px
 }
-.update-icon svg {
+.event-icon svg {
   width:65px;
   height:65px;
   color:#849374
 }
-.updates-strip .eyebrow {
+.events-strip .eyebrow {
   font-size:8px;
   margin-bottom:10px
 }
-.updates-strip h3 {
+.events-strip h3 {
   font-size:32px;
   margin-bottom:8px
 }
-.updates-strip p:last-child {
+.events-strip p:last-child {
   font-size:11px;
   margin-bottom:0;
   color:var(--muted)
 }
-.updates-strip>.text-link {
+.events-strip>.text-link {
   margin-left:auto;
   flex-shrink:0
 }
@@ -1395,55 +1395,55 @@ a svg {
   border-top:1px solid var(--line);
   padding-top:75px
 }
-.update-feature {
+.event-feature {
   display:grid;
   grid-template-columns:1fr 1.05fr;
   gap:64px;
   align-items:center
 }
-.update-photo>img {
+.event-photo>img {
   width:100%;
   height:430px;
   object-fit:cover;
   object-position:center 52%;
   filter:saturate(.82)
 }
-.update-feature h2 {
+.event-feature h2 {
   font-size:clamp(38px,4vw,54px);
   margin-top:18px;
   margin-bottom:20px
 }
-.updates-page .page-intro {
+.events-page .page-intro {
   padding-bottom:34px
 }
-.updates-page .intro-heading {
+.events-page .intro-heading {
   align-self:center
 }
-.update-feature article>p {
+.event-feature article>p {
   font-size:13px;
   color:var(--muted);
   max-width:450px
 }
-.updates-list>article {
+.events-list>article {
   display:grid;
   grid-template-columns:220px 1fr;
   gap:60px;
   padding:38px 0;
   border-top:1px solid var(--line)
 }
-.updates-list>article .eyebrow {
+.events-list>article .eyebrow {
   margin-bottom:9px;
   font-size:9px
 }
-.updates-list>article>div:first-child>p {
+.events-list>article>div:first-child>p {
   font-size:9px;
   color:var(--muted)
 }
-.updates-list>article h3 {
+.events-list>article h3 {
   font-size:33px;
   margin-bottom:15px
 }
-.updates-list>article>div:last-child>p {
+.events-list>article>div:last-child>p {
   max-width:700px;
   font-size:13px;
   color:var(--muted)
@@ -1616,7 +1616,7 @@ a svg {
   .tracker-facts dd {
     text-align:left
   }
-  .update-feature {
+  .event-feature {
     gap:50px
   }
   .footer-top {
@@ -1759,15 +1759,15 @@ a svg {
   .story-image img {
     height:310px
   }
-  .updates-strip {
+  .events-strip {
     padding-inline:0;
     gap:25px
   }
-  .updates-strip>.text-link {
+  .events-strip>.text-link {
     font-size:10px;
     gap:12px
   }
-  .update-icon svg {
+  .event-icon svg {
     width:45px;
     height:45px
   }
@@ -1857,10 +1857,10 @@ a svg {
   .intro-description {
     font-size:13px
   }
-  .update-photo>img {
+  .event-photo>img {
     height:390px
   }
-  .updates-list>article {
+  .events-list>article {
     grid-template-columns:160px 1fr;
     gap:35px
   }
@@ -2128,33 +2128,33 @@ a svg {
   .story-copy p {
     margin-bottom:18px
   }
-  .updates-strip {
+  .events-strip {
     display:grid;
     grid-template-columns:40px 1fr;
     gap:12px 18px;
     padding-block:27px
   }
-  .updates-strip .eyebrow {
+  .events-strip .eyebrow {
     font-size:7px
   }
-  .updates-strip h3 {
+  .events-strip h3 {
     font-size:29px
   }
-  .updates-strip p:last-child {
+  .events-strip p:last-child {
     font-size:10px
   }
-  .updates-strip>.text-link {
+  .events-strip>.text-link {
     grid-column:2;
     justify-self:start;
     margin:0;
     font-size:10px;
     gap:25px
   }
-  .update-icon {
+  .event-icon {
     align-self:start;
     margin-top:20px
   }
-  .update-icon svg {
+  .event-icon svg {
     width:38px;
     height:38px
   }
@@ -2496,46 +2496,46 @@ a svg {
   .history-closing+.visit-cta {
     padding-top:60px
   }
-  .update-feature {
+  .event-feature {
     grid-template-columns:1fr;
     gap:24px
   }
-  .update-photo>img {
+  .event-photo>img {
     height:280px;
     object-position:center 55%
   }
-  .update-feature article {
+  .event-feature article {
     padding-inline:5px
   }
-  .update-feature h2 {
+  .event-feature h2 {
     font-size:40px
   }
-  .updates-page .page-intro {
+  .events-page .page-intro {
     padding-bottom:24px
   }
-  .update-feature article>p {
+  .event-feature article>p {
     font-size:13px
   }
-  .updates-list>article {
+  .events-list>article {
     grid-template-columns:1fr;
     gap:10px;
     padding-block:27px
   }
-  .updates-list>article>div:first-child {
+  .events-list>article>div:first-child {
     display:flex;
     justify-content:space-between;
     gap:15px
   }
-  .updates-list>article .eyebrow {
+  .events-list>article .eyebrow {
     font-size:8px
   }
-  .updates-list>article>div:first-child>p {
+  .events-list>article>div:first-child>p {
     font-size:8px
   }
-  .updates-list>article h3 {
+  .events-list>article h3 {
     font-size:30px
   }
-  .updates-list>article>div:last-child>p {
+  .events-list>article>div:last-child>p {
     font-size:12px
   }
   .editorial-policy {
@@ -2671,4 +2671,20 @@ html:not(.js) [role=tabpanel] {
     min-height:0;
     margin-bottom:20px
   }
+}
+
+/* Recurring park events and the compact project context on History. */
+.event-feature h3 { font-size:25px; margin-bottom:15px }
+.events-list .section-heading>p:last-child { max-width:650px; font-size:13px; color:var(--muted) }
+.event-record strong { color:var(--ink); font-weight:500 }
+.event-calendar-links { display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:18px }
+.garden-plans { display:grid; grid-template-columns:1fr 1.5fr; gap:64px; border-block:1px solid var(--line) }
+.garden-plans h2 { font-size:clamp(34px,4vw,50px) }
+.garden-plans>div:last-child { max-width:700px; font-size:13px; color:var(--muted) }
+.garden-plans p:last-child { margin-bottom:0 }
+@media(max-width:650px) {
+  .event-feature h3 { font-size:24px }
+  .events-list>article>div:first-child { flex-wrap:wrap; gap:4px 15px }
+  .garden-plans { grid-template-columns:1fr; gap:20px }
+  .event-calendar-links { flex-direction:column; align-items:start; gap:10px }
 }

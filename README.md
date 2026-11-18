@@ -27,6 +27,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 - `/visit/` — seasonal hours, directions, parking, access guidance, and FAQ
 - `/cherry-blossoms/` — evergreen blossom guide
 - `/cherry-blossoms/2027/` — dated seasonal notebook
+- `/toro-nagashi/` — lantern ceremony tradition, Chicago program, location map, and next-edition status
 - `/history/` — selective history timeline and a short, sourced project note
 - `/events/` — recurring Jackson Park traditions, organizer links, and explicitly labeled dates
 - `/credits/` — sources, image licenses, and independence statement
@@ -35,6 +36,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 - `src/data.mjs`: source URLs, editorial review dates, event references, bloom record, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
+- `src/lantern-page.mjs` and `public/lantern.css`: the dedicated Toro Nagashi guide and annotated lantern illustration.
 - `src/garden-details.mjs` and `public/garden-details.css`: the annotated garden view and compact homepage visual guides.
 - `src/park-map.mjs` and `public/park-map.css`: illustrated park explorer, sourced landmark facts, and responsive hotspot positions.
 - `src/components.mjs`: shared navigation, footer, image markup, metadata, and structured data.
@@ -47,7 +49,7 @@ The 2027 tracker deliberately starts with no observation date or confirmed peak 
 
 Events and revitalization sources were reviewed November 18, 2026; the evidence and editorial decisions are recorded in `docs/events-and-revitalization-review.txt`. `/updates/` is retired and permanently redirects to `/history/#garden-plans` in Vercel and the local server. Configure that redirect when deploying to another static host. The main navigation now links to `/events/`. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Keep visitor notices on Visit.
 
-The event guide separates recurring traditions, past editions, and organizer-announced future dates. Do not roll event dates forward automatically or treat an old festival listing as a new announcement. Event-specific garden admission can differ from ordinary visiting rules. No automatic calendar or update service is configured.
+The event guide separates recurring traditions, past editions, and organizer-announced future dates. Do not roll event dates forward automatically or treat an old festival listing as a new announcement. Event-specific garden admission can differ from ordinary visiting rules. No automatic calendar or update service is configured. The dedicated `/toro-nagashi/` page follows the same rule: its 2026 program is historical, and no 2027 date is verified. Research and cultural sources are recorded in `docs/toro-nagashi-research.txt`.
 
 The canonical origin is configured in `src/data.mjs`; set it to the actual public origin before hosting elsewhere.
 
@@ -60,6 +62,8 @@ The decorative blossom watercolor and muted pine ink study were generated with t
 The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Keep current bridge access and bloom conditions in the dated page text; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
 
 The homepage park map uses `public/images/jackson-park-map.webp` and its responsive 768px variant. Its prompt and geography review are in `docs/jackson-park-map-prompt.txt`. Hotspot positions are relative to this exact uncropped 3:2 artwork. Keep labels and facts in HTML, and re-check pin placement if changing the image. The map represents selected garden-area and central-park landmarks, not current access or a walking route. All six source-linked facts remain visible when JavaScript is unavailable; animation stops after two cycles and is disabled for reduced motion.
+
+The original lantern study uses `public/images/toro-nagashi-lantern.webp` and its 768px variant. Its built-in image-generation prompt and provenance are in `docs/toro-nagashi-lantern-prompt.txt`. It illustrates the tradition, not the Chicago event or its supplied materials. The numbered labels remain in HTML.
 
 Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM Sans in `public/fonts/`.
 

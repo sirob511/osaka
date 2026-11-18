@@ -1,0 +1,22 @@
+Toro Nagashi lantern illustration — November 18, 2026
+
+Generated with the built-in OpenAI image generation tool.
+Use case: scientific-educational / original explanatory watercolor.
+Style reference: public/images/cherry-blossom-map.webp (style only).
+Master: /home/boris/.codex/generated_images/01a1ece9-3d7e-7d50-8354-1a53d7e605ce/exec-92f5ec9d-0bef-483f-a581-bd004fd89a78.png
+Project assets: public/images/toro-nagashi-lantern.webp (1536 x 1024)
+and public/images/toro-nagashi-lantern-768.webp (768 x 512).
+Resized and compressed to WebP with ImageMagick; original master preserved.
+
+This is a conceptual illustration of a floating paper lantern, not event
+photography or a specification for the lanterns distributed in Chicago.
+The numbers, explanations, and location pins are accessible HTML, not baked
+into the artwork. The location map reuses the existing park illustration.
+
+Final generation prompt:
+Use case: scientific-educational / illustration-story
+Asset type: informative editorial watercolor illustration for an independent Chicago Japanese garden guide, landscape 3:2, 1536 x 1024.
+Create a beautiful, quiet, exceptionally refined watercolor-and-fine-ink illustration showing what a floating Japanese paper lantern looks like. Style reference: the supplied blossom map's delicate watercolor washes, ink detail, sophisticated muted colors and handmade paper texture. This new illustration is conceptual, not a photograph or depiction of a particular event.
+Composition: a large single cube-shaped Japanese floating paper lantern centered slightly right at 57% width and 52% height, viewed at a gentle three-quarter angle at water level. Thin delicate wooden frame, warm translucent ivory paper sides, small light softly glowing inside, and a broad flat light-wood floating base clearly resting ON the water. Front paper face has only a few faint expressive non-readable ink marks suggesting a handwritten dedication; no legible words or invented Japanese characters. The base and paper construction must be visually clear. Two much smaller lanterns drift in the upper-right distance, one on each depth plane, with subtly reflected light on the still water. Leave generous undisturbed water to the left for HTML explanatory labels, and enough room above and below the main lantern for annotation.
+Palette: muted deep forest-green and celadon water, cream paper, restrained warm amber light. Soft dusk atmosphere, delicate horizontal ripples, finely painted reflections, softly fading cream paper edges. Luminous but understated, no electric orange, neon or high-contrast glare. Retain the airy editorial elegance of the supplied map while letting the lantern's light make this visually distinct.
+Constraints: no people, no hands, no moon, no skyline, no bridge, no identifiable landscape, no buildings, no Japanese gates, no stone lantern, no sky lantern, no airborne objects, no title, no labels, no text, no legend, no logo, no border or UI. It should teach the viewer that these are paper lanterns on floating bases, not stone garden lanterns. Original illustration; not documentary event photography.

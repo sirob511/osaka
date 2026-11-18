@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 
 const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/visit/', '/cherry-blossoms/', '/cherry-blossoms/2027/', '/history/', '/events/', '/credits/'];
+const routes = ['/', '/visit/', '/cherry-blossoms/', '/cherry-blossoms/2027/', '/history/', '/events/', '/toro-nagashi/', '/credits/'];
 const sessionBase = `osaka-qa-${process.pid}`;
 function browser(...args) {
   const result = JSON.parse(execFileSync('agent-browser', ['--session', sessionBase, '--json', ...args], { encoding: 'utf8', timeout: 45000 }));
@@ -41,7 +41,7 @@ try {
           assert(!(a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y), `Overlapping map targets ${i}/${j} at ${width}px`);
         }
       }
-      if (['/', '/visit/', '/cherry-blossoms/2027/'].includes(route) && width !== 320) {
+      if (['/', '/visit/', '/cherry-blossoms/2027/', '/toro-nagashi/'].includes(route) && width !== 320) {
         browser('screenshot', '--full', `test-results/${route === '/' ? 'home' : route.replaceAll('/', '-')}-${width}.png`);
       }
       console.log(`PASS ${width}px ${route}`);

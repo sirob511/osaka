@@ -1,0 +1,49 @@
+Toro Nagashi editorial research
+Reviewed November 18, 2026
+
+Decision
+Give the lantern ceremony a dedicated page and navigation link. It has a documented local history, cultural meaning, and practical attendance information. Describe it as a ceremony or observance of remembrance and peace, not one fixed national holiday or a generic light show.
+
+Chicago: latest official past edition (cross-check the later admission update below)
+https://www.chicagoparkdistrict.com/events/toro-nagashi-lantern-ceremony-jackson-park-0
+The Park District listed Thursday, August 6, 2026, 7-11 p.m., at Osaka Garden, 5900 S. Cornell Drive. Free and all ages, with registration required and attendance limited to 300. Lantern distribution was first come, first served until supplies ran out. Decorating was scheduled for 7-8 p.m. Lanterns floated on the garden pond and could be placed in the garden and around Yoko Ono's SKYLANDING. The program included shamisen by Toyoaki Sanjuro and a ceremony led by Daiyuzenji Rinzai Zen Temple. The event instructions prohibited dogs, food, and photography in the garden, and recommended Hayes Lot or Stony Island parking. These are 2026 event details, not promises for a future edition. Direct browser retrieval returned 403; the search index supplied the official page text.
+
+Local recurrence
+https://www.japaneseartsfoundation.org/upcoming-festivals/toro-nagashi-2023
+The Japanese Arts Foundation explicitly called August 16, 2023 the inaugural local ceremony, scheduled for 7-10 p.m.
+https://www.japaneseartsfoundation.org/upcoming-festivals/toro-nagashi-2024
+The next edition was August 6, 2024, 7-10 p.m.
+https://www.japaneseartsfoundation.org/upcoming-festivals/toro-nagashi-2025
+The 2025 edition was August 6, 7-10 p.m.
+https://www.japaneseartsfoundation.org/toro-nagashi
+This evergreen organizer page still describes 2025. Do not mistake its navigation position for an announcement of the next edition. The 2023 date also shows why August 6 must not be asserted as an unchanging annual Chicago date.
+
+Next edition
+No Chicago 2027 announcement was verified in the reviewed Park District, Japanese Arts Foundation, Japanese Culture Center, or broader search results. Display the absence of verified next-edition information and clearly label the 2026 listing as past. Do not promote the old registration URL as current registration, or create future Event structured data from an assumed date.
+
+Chicago cultural context
+https://daiyuzenji.org/news/2026/7/18/honoring-remembrance-through-the-tradition-of-toro-nagashi
+The participating temple's July 18, 2026 article connects lantern floating with the close of Obon, remembrance of ancestors and loved ones, and hopes for peace. It confirms participation in Chicago's annual ceremony and describes the practice as welcoming people of all backgrounds.
+
+Wider cultural sources
+https://www.si.emb-japan.go.jp/Documents/Japan%20Fresh%20News_August%202015.pdf
+Embassy of Japan newsletter, page 4: lantern floating and remembrance of the deceased.
+https://www.mlit.go.jp/tagengo-db/common/001560970.pdf
+Japan Tourism Agency: the broader lantern-floating custom is longstanding; Hiroshima's observance has its own postwar history and August 6 date.
+https://tabunka.tokyo-tsunagari.or.jp/english/topics/motto/nihongo_2308.html
+Tokyo Intercultural Portal: Obon customs and timing vary; August is common, with July observances in some communities.
+https://www.chushinren.jp/tourou/en/history.html
+Hiroshima ceremony organizers: the modern local observance began around 1947-1948; lantern messages remember those who died and express hopes for peace.
+https://www.gotokyo.org/en/spot/ev099/index.html
+Tokyo's official travel guide: the Sumida River ceremony remembers earthquake and wartime victims and expresses hopes for peace. Local meanings differ.
+
+Editorial and visual cautions
+The user-supplied Culture Trip article returned 403:
+https://theculturetrip.com/asia/japan/articles/the-history-of-toro-nagashi-japans-glowing-lantern-festival
+Do not repeat its reported blanket claim that Toro Nagashi began in 1946. Distinguish the older tradition from the histories of individual modern ceremonies. Do not import Hiroshima's lantern prices, materials, registration procedures, or river-release instructions into Chicago guidance. The local event page is the authority for attendance rules. Explain the lantern's message, paper enclosure, light, and floating base as an illustration of the tradition; materials and ceremony procedure depend on the organizers.
+
+No explicitly reusable photograph of the Chicago ceremony was verified. Organizer photos are not licensed merely because they are publicly visible. Original explanatory artwork must be identified as illustration, not documentary coverage of an event. Existing garden photography shows the setting only. No organizers were contacted.
+
+Admission update found during independent review
+https://daiyuzenji.org/special-events/2026/8/6/toro-nagashi-lantern-ceremony-at-jackson-park
+The participating temple’s 2026 listing explicitly states that attendance is first come, first served and registration is no longer required, superseding the original registration instruction reproduced in the Park District listing. The page now displays this updated entry arrangement, describes capacity as limited without repeating the earlier numeric cap, and links both notices. Avoid calling the garden’s 2023 inaugural event Chicago’s first-ever lantern ceremony.

@@ -557,6 +557,21 @@ a svg {
   line-height:1.7;
   color:var(--muted)
 }
+.footer-attribution {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 5px;
+  margin:0 auto 0 0
+}
+.footer-attribution>span {
+  white-space:nowrap
+}
+.footer-attribution a {
+  color:var(--ink)
+}
+.footer-attribution a:hover {
+  color:#718166
+}
 .footer-bottom a {
   flex-shrink:0;
   text-decoration:none
@@ -1640,6 +1655,9 @@ a svg {
   .footer-bottom {
     flex-wrap:wrap;
     gap:10px 20px
+  }
+  .footer-attribution {
+    flex-basis:100%
   }
   .page-intro {
     display:block;

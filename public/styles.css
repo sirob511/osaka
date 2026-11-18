@@ -83,8 +83,8 @@ h1 {
   margin-bottom:30px
 }
 h2 {
-  font-size:clamp(43px,4.4vw,66px);
-  margin-bottom:27px
+  font-size:clamp(38px,4vw,56px);
+  margin-bottom:22px
 }
 h3 {
   font-size:32px;
@@ -122,12 +122,12 @@ a svg {
   display:none!important
 }
 .wrap {
-  width:calc(100% - 128px);
-  max-width:1280px;
+  width:calc(100% - 112px);
+  max-width:1360px;
   margin-inline:auto
 }
 .section-space {
-  padding-block:120px
+  padding-block:84px
 }
 .eyebrow {
   display:block;
@@ -137,7 +137,7 @@ a svg {
   font-weight:600;
   letter-spacing:.18em;
   text-transform:uppercase;
-  margin-bottom:25px
+  margin-bottom:18px
 }
 .button {
   display:inline-flex;
@@ -206,13 +206,14 @@ a svg {
   top:10px
 }
 .site-header {
-  height:105px;
+  height:76px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:28px;
-  padding:0 48px;
-  max-width:1720px;
+  width:calc(100% - 112px);
+  padding:0;
+  max-width:1360px;
   margin:auto
 }
 .brand {
@@ -223,12 +224,12 @@ a svg {
   flex-shrink:0
 }
 .brand>svg {
-  width:47px;
-  height:47px
+  width:39px;
+  height:39px
 }
 .brand>span {
   font-family:var(--serif);
-  font-size:29px;
+  font-size:26px;
   line-height:1.15;
   letter-spacing:-.025em
 }
@@ -238,7 +239,7 @@ a svg {
   font-size:7px;
   font-weight:500;
   letter-spacing:.15em;
-  margin-top:8px
+  margin-top:5px
 }
 .site-header nav {
   display:flex;
@@ -282,8 +283,8 @@ a svg {
   display:none
 }
 .hero {
-  height:min(760px,calc(100svh - 105px));
-  min-height:585px;
+  height:min(670px,calc(100svh - 165px));
+  min-height:500px;
   position:relative;
   margin:0 20px;
   isolation:isolate;
@@ -325,7 +326,7 @@ a svg {
   line-height:1
 }
 .hero h1 {
-  font-size:clamp(74px,7.8vw,120px);
+  font-size:clamp(64px,7vw,100px);
   line-height:1;
   letter-spacing:-.045em;
   margin-bottom:27px
@@ -384,7 +385,7 @@ a svg {
   display:grid;
   grid-template-columns:1.1fr 1fr 1fr auto;
   gap:35px;
-  padding-block:33px;
+  padding-block:23px;
   border-bottom:1px solid var(--line);
   align-items:center
 }
@@ -635,8 +636,21 @@ a svg {
   flex-shrink:0
 }
 .visit-cta {
+  position:relative;
+  isolation:isolate;
   text-align:center;
-  padding-block:90px 100px
+  padding-block:64px 72px
+}
+.visit-cta:before {
+  content:'';
+  position:absolute;
+  z-index:-1;
+  inset:0 auto 0 -6%;
+  width:45%;
+  background:url('/images/ink-pine.webp') center / contain no-repeat;
+  opacity:.55;
+  transform:scaleX(-1);
+  pointer-events:none
 }
 .cta-flower {
   display:flex;
@@ -653,7 +667,7 @@ a svg {
   margin-bottom:23px
 }
 .visit-cta h2 {
-  font-size:75px
+  font-size:60px
 }
 .visit-cta p:not(.eyebrow) {
   font-size:12px;
@@ -716,54 +730,83 @@ a svg {
   text-decoration:none
 }
 .page-intro {
-  padding-block:35px 66px
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  column-gap:64px;
+  padding-block:20px 32px
+}
+.page-intro:before {
+  content:'';
+  position:absolute;
+  z-index:-1;
+  inset:-24px -32px -8px auto;
+  width:54%;
+  background:url('/images/ink-pine.webp') right center / contain no-repeat;
+  opacity:.34;
+  pointer-events:none
 }
 .breadcrumb {
+  grid-column:1/-1;
+  width:fit-content;
   display:flex;
   gap:14px;
   align-items:center;
   font-size:10px;
   text-decoration:none;
   color:var(--muted);
-  margin-bottom:55px
+  margin-bottom:18px
 }
 .breadcrumb svg {
   width:14px;
   height:14px
 }
-.page-intro>.eyebrow {
-  margin-bottom:22px
+.intro-heading .eyebrow {
+  margin-bottom:12px;
+  font-size:9px
 }
 .page-intro h1 {
-  max-width:1000px
+  font-size:clamp(42px,4.8vw,64px);
+  line-height:1.05;
+  margin-bottom:0;
+  max-width:760px
+}
+.intro-summary {
+  align-self:end;
+  padding-bottom:5px;
+  max-width:390px
 }
 .intro-description {
-  max-width:510px;
   color:var(--muted);
-  font-size:15px;
-  line-height:1.9;
+  font-size:14px;
+  line-height:1.8;
   margin-bottom:0
 }
-.page-intro>.text-link {
-  margin-top:25px
+.intro-summary>.text-link {
+  margin-top:14px;
+  font-size:11px
 }
 .wide-photo {
   position:relative
 }
 .wide-photo>img {
   width:100%;
-  height:430px;
+  height:380px;
   object-fit:cover;
-  object-position:center 60%
+  object-position:center 60%;
+  filter:saturate(.85)
 }
-.wide-photo>span {
-  position:absolute;
-  bottom:23px;
-  left:30px;
-  color:white;
-  font-size:8px;
-  letter-spacing:.2em;
-  text-shadow:0 1px 5px #213828
+.photo-caption {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding-block:12px;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.5;
+  letter-spacing:.08em
 }
 .visit-layout {
   display:grid;
@@ -985,14 +1028,22 @@ a svg {
   gap:20px
 }
 .blossom-page-intro .page-intro {
+  display:block;
   width:100%;
-  padding-bottom:60px
+  padding-bottom:36px
+}
+.blossom-page-intro .page-intro:before {
+  display:none
+}
+.blossom-page-intro .intro-summary {
+  margin-top:20px;
+  max-width:430px
 }
 .blossom-page-intro figure {
   padding-top:20px
 }
 .blossom-page-intro .botanical {
-  height:460px;
+  height:340px;
   max-width:110%;
   width:110%;
   margin-left:-10%
@@ -1032,7 +1083,7 @@ a svg {
 .editorial-grid {
   display:grid;
   grid-template-columns:1fr 1.1fr;
-  gap:90px;
+  gap:64px;
   align-items:start
 }
 .editorial-grid>div:last-child {
@@ -1234,35 +1285,42 @@ a svg {
 }
 .history-banner {
   position:relative;
-  height:500px
+  margin-bottom:0
 }
 .history-banner>img {
   width:100%;
-  height:100%;
-  object-fit:cover
+  height:400px;
+  object-fit:cover;
+  object-position:center 35%;
+  filter:saturate(.85)
 }
 .history-banner:after {
   content:'';
   position:absolute;
-  inset:0;
+  inset:0 0 38px;
+  pointer-events:none;
   background:linear-gradient(0deg,rgba(11,31,17,.45),transparent 60%)
 }
 .history-banner>div {
   position:absolute;
-  bottom:25px;
-  left:45px;
+  bottom:65px;
+  left:32px;
   color:white;
   z-index:1
 }
 .history-banner span {
   font-family:var(--serif);
-  font-size:110px;
+  font-size:72px;
   line-height:1
 }
 .history-banner p {
   font-size:10px;
   letter-spacing:.14em;
-  margin:15px 0 0
+  margin:9px 0 0
+}
+.history-banner .photo-caption span {
+  font:inherit;
+  letter-spacing:inherit
 }
 .timeline {
   max-width:990px
@@ -1271,12 +1329,12 @@ a svg {
   display:grid;
   grid-template-columns:200px 1fr;
   gap:70px;
-  padding:42px 0;
+  padding:32px 0;
   border-top:1px solid var(--line)
 }
 .timeline-year {
   font-family:var(--serif);
-  font-size:64px;
+  font-size:54px;
   color:#778568;
   line-height:1
 }
@@ -1310,16 +1368,26 @@ a svg {
 .update-feature {
   display:grid;
   grid-template-columns:1fr 1.05fr;
-  gap:80px;
+  gap:64px;
   align-items:center
 }
-.update-feature>div>img {
+.update-photo>img {
   width:100%;
-  height:590px;
-  object-fit:cover
+  height:430px;
+  object-fit:cover;
+  object-position:center 52%;
+  filter:saturate(.82)
 }
 .update-feature h2 {
-  margin-top:25px
+  font-size:clamp(38px,4vw,54px);
+  margin-top:18px;
+  margin-bottom:20px
+}
+.updates-page .page-intro {
+  padding-bottom:34px
+}
+.updates-page .intro-heading {
+  align-self:center
 }
 .update-feature article>p {
   font-size:13px;
@@ -1447,7 +1515,7 @@ a svg {
     left:8%
   }
   .site-header {
-    padding-inline:60px
+    padding-inline:0
   }
 }
 @media(max-width:1100px) {
@@ -1455,7 +1523,8 @@ a svg {
     width:calc(100% - 80px)
   }
   .site-header {
-    padding-inline:30px;
+    width:calc(100% - 80px);
+    padding-inline:0;
     gap:20px
   }
   .site-header nav {
@@ -1468,7 +1537,7 @@ a svg {
     left:6%
   }
   .hero h1 {
-    font-size:90px
+    font-size:78px
   }
   .intro-section {
     gap:60px
@@ -1498,7 +1567,7 @@ a svg {
     width:calc(100% - 80px)
   }
   .blossom-page-intro h1 {
-    font-size:75px
+    font-size:56px
   }
   .editorial-grid {
     gap:60px
@@ -1532,14 +1601,14 @@ a svg {
 }
 @media(max-width:900px) {
   .site-header {
-    height:90px
+    height:72px
   }
   .site-header .brand>span {
-    font-size:27px
+    font-size:25px
   }
   .site-header .brand>svg {
-    width:42px;
-    height:42px
+    width:37px;
+    height:37px
   }
   .menu-toggle {
     display:flex;
@@ -1577,7 +1646,7 @@ a svg {
     z-index:10;
     left:0;
     right:0;
-    top:90px;
+    top:72px;
     padding:22px 40px 35px;
     background:var(--cream);
     box-shadow:0 16px 20px #253b3020;
@@ -1597,12 +1666,12 @@ a svg {
     display:none
   }
   .hero {
-    height:680px;
+    height:580px;
     min-height:0;
     margin-inline:15px
   }
   .hero h1 {
-    font-size:85px
+    font-size:74px
   }
   .essentials {
     gap:20px;
@@ -1615,7 +1684,7 @@ a svg {
     padding-top:15px
   }
   .section-space {
-    padding-block:90px
+    padding-block:64px
   }
   .intro-section {
     gap:35px
@@ -1714,10 +1783,10 @@ a svg {
     grid-template-columns:1.2fr 1fr
   }
   .blossom-page-intro h1 {
-    font-size:62px
+    font-size:48px
   }
   .blossom-page-intro .botanical {
-    height:350px
+    height:300px
   }
   .blossom-page-intro .intro-description {
     font-size:13px
@@ -1776,8 +1845,14 @@ a svg {
   .timeline-year {
     font-size:55px
   }
-  .update-feature>div>img {
-    height:550px
+  .page-intro {
+    column-gap:32px
+  }
+  .intro-description {
+    font-size:13px
+  }
+  .update-photo>img {
+    height:390px
   }
   .updates-list>article {
     grid-template-columns:160px 1fr;
@@ -1789,18 +1864,19 @@ a svg {
     width:calc(100% - 44px)
   }
   .section-space {
-    padding-block:68px
+    padding-block:52px
   }
   .site-header {
-    height:82px;
-    padding-inline:22px
+    height:66px;
+    width:calc(100% - 44px);
+    padding-inline:0
   }
   .site-header .brand>svg {
-    width:36px;
-    height:36px
+    width:32px;
+    height:32px
   }
   .site-header .brand>span {
-    font-size:25px
+    font-size:23px
   }
   .brand {
     gap:10px
@@ -1810,7 +1886,7 @@ a svg {
     margin-top:6px
   }
   .site-header nav {
-    top:82px;
+    top:66px;
     padding-inline:23px
   }
   .menu-toggle {
@@ -1823,9 +1899,9 @@ a svg {
   }
   .hero {
     margin-inline:10px;
-    height:650px;
-    max-height:calc(100svh - 92px);
-    min-height:530px
+    height:560px;
+    max-height:calc(100svh - 145px);
+    min-height:465px
   }
   .hero-image {
     object-position:58% center
@@ -1849,7 +1925,7 @@ a svg {
     font-size:20px
   }
   .hero h1 {
-    font-size:clamp(54px,13.6vw,83px);
+    font-size:clamp(48px,12.5vw,74px);
     line-height:1.05;
     letter-spacing:-.05em;
     margin-bottom:24px
@@ -1914,11 +1990,11 @@ a svg {
   }
   .eyebrow {
     font-size:8px;
-    margin-bottom:22px
+    margin-bottom:16px
   }
   h2 {
-    font-size:45px;
-    margin-bottom:24px
+    font-size:40px;
+    margin-bottom:20px
   }
   .intro-section {
     grid-template-columns:1fr;
@@ -1928,7 +2004,7 @@ a svg {
     padding-inline:6px
   }
   .intro-copy h2 {
-    font-size:47px
+    font-size:42px
   }
   .intro-copy>p:not(.eyebrow) {
     font-size:13px;
@@ -1942,7 +2018,7 @@ a svg {
     padding:0 12px 0 6px
   }
   .intro-photo>img {
-    height:430px;
+    height:350px;
     border-radius:190px 190px 0 0
   }
   .intro-photo figcaption {
@@ -1966,7 +2042,7 @@ a svg {
     padding-inline:6px
   }
   .blossom-copy h2 {
-    font-size:65px
+    font-size:53px
   }
   .blossom-copy>p:not(.eyebrow) {
     font-size:13px;
@@ -2055,10 +2131,15 @@ a svg {
     height:38px
   }
   .visit-cta {
-    padding-block:65px
+    padding-block:48px
+  }
+  .visit-cta:before {
+    width:70%;
+    left:-12%;
+    opacity:.22
   }
   .visit-cta h2 {
-    font-size:57px
+    font-size:48px
   }
   .visit-cta .eyebrow {
     font-size:8px
@@ -2103,27 +2184,44 @@ a svg {
     margin-left:auto
   }
   .page-intro {
-    padding-block:24px 45px
+    display:block;
+    padding-block:14px 24px
+  }
+  .page-intro:before {
+    inset:0 -18px auto auto;
+    width:68%;
+    height:210px;
+    opacity:.2
   }
   .breadcrumb {
-    margin-bottom:35px;
+    margin-bottom:14px;
     font-size:9px
   }
   .page-intro h1 {
-    font-size:58px;
-    margin-bottom:23px
+    font-size:clamp(34px,9.8vw,46px);
+    margin-bottom:0
+  }
+  .intro-heading .eyebrow {
+    font-size:8px;
+    margin-bottom:9px
+  }
+  .intro-summary {
+    max-width:none;
+    margin-top:15px;
+    padding:0
   }
   .intro-description {
     font-size:13px;
-    line-height:1.9
+    line-height:1.75
   }
   .wide-photo>img {
-    height:280px
+    height:250px
   }
-  .wide-photo>span {
-    font-size:7px;
-    left:20px;
-    bottom:18px
+  .photo-caption {
+    font-size:8px;
+    gap:12px;
+    letter-spacing:.025em;
+    padding-block:10px
   }
   .visit-layout {
     grid-template-columns:1fr;
@@ -2219,13 +2317,13 @@ a svg {
     padding-bottom:0
   }
   .blossom-page-intro h1 {
-    font-size:61px
+    font-size:clamp(34px,9.8vw,46px)
   }
   .blossom-page-intro figure {
-    padding:0 0 30px
+    padding:0 0 22px
   }
   .blossom-page-intro .botanical {
-    height:300px;
+    height:220px;
     margin:0;
     width:100%;
     max-width:100%
@@ -2369,14 +2467,21 @@ a svg {
     padding:14px 20px
   }
   .history-banner {
-    height:350px
+    height:auto
+  }
+  .history-banner>img {
+    height:270px;
+    object-position:56% center
+  }
+  .history-banner:after {
+    bottom:33px
   }
   .history-banner>div {
-    left:25px;
-    bottom:20px
+    left:20px;
+    bottom:53px
   }
   .history-banner span {
-    font-size:80px
+    font-size:56px
   }
   .history-banner p {
     font-size:8px;
@@ -2407,16 +2512,20 @@ a svg {
   }
   .update-feature {
     grid-template-columns:1fr;
-    gap:35px
+    gap:24px
   }
-  .update-feature>div>img {
-    height:380px
+  .update-photo>img {
+    height:280px;
+    object-position:center 55%
   }
   .update-feature article {
     padding-inline:5px
   }
   .update-feature h2 {
-    font-size:47px
+    font-size:40px
+  }
+  .updates-page .page-intro {
+    padding-bottom:24px
   }
   .update-feature article>p {
     font-size:13px
@@ -2520,6 +2629,9 @@ html:not(.js) [role=tabpanel] {
   }
 }
 @media print {
+  .page-intro:before,.visit-cta:before {
+    display:none
+  }
   .site-header,.site-footer,.hero,.visit-cta,.menu-toggle,.copy-address,.directions-tabs [role=tablist] {
     display:none
   }

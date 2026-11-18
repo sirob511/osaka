@@ -13,7 +13,7 @@ export function sourceNote(keys = ['garden']) {
   return `<aside class="source-note"><span class="eyebrow">Our sources</span><p>Checked <time datetime="${site.checked}">${site.checkedLabel}</time>. ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}. This independent guide is updated by hand; check official notices before traveling.</p></aside>`;
 }
 export function pageIntro(kicker, title, description, extra = '') {
-  return `<section class="page-intro wrap"><a class="breadcrumb" href="/">The garden ${arrow}</a><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="intro-description">${description}</p>${extra}</section>`;
+  return `<section class="page-intro wrap"><a class="breadcrumb" href="/">The garden ${arrow}</a><div class="intro-heading"><p class="eyebrow">${kicker}</p><h1>${title}</h1></div><div class="intro-summary"><p class="intro-description">${description}</p>${extra}</div></section>`;
 }
 export function visitCta() {
   return `<section class="visit-cta wrap"><div class="cta-flower">${flower}</div><p class="eyebrow">A little closer than you think</p><h2>Find your moment<br>of <em>quiet.</em></h2><p>On a small island in Jackson Park,<br>a different pace of Chicago awaits.</p>${link('/visit/', 'Plan your visit', 'button dark')}</section>`;

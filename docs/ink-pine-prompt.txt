@@ -1,0 +1,12 @@
+Asset: public/images/ink-pine.webp
+Method: built-in OpenAI image_gen tool, resized to 1024 x 683 and compressed to WebP with alpha preserved.
+Purpose: decorative background art inspired by Japanese ink painting, not a photograph or depiction of Osaka Garden.
+
+Generation prompt:
+Use case: stylized-concept
+Asset type: decorative background illustration for a quiet Japanese garden website; transparent PNG, wide landscape 3:2 composition.
+Primary request: refined Japanese sumi-e ink and watercolor study of a gently curved pine tree beside still water, muted palette, poetic negative space.
+Composition: a windswept pine with elegant crooked trunk and layered fine needle silhouettes occupies the RIGHT third. A few low shoreline stones and faint horizontal water brushstrokes extend along the bottom toward the center. The LEFT half and upper center are mostly empty transparent space. The pine canopy is the primary visual. Let every edge dissolve naturally into transparent mist, no rectangular edge.
+Style: museum-quality contemporary ink wash on invisible paper, hand-painted dry-brush texture and translucent layered washes, extremely restrained and delicate. Fine branch detail with larger softly feathered masses; asymmetrical and airy.
+Color palette: desaturated sage green #7c8870, gray olive #a6aa96, warm stone #c5bba5, tiny hints of dusty blush. Soft medium-light contrast appropriate behind dark green typography on warm ivory #f7f5ed.
+Constraints: actual transparent background with alpha. Decorative illustration, not a photo or an image of a real location. No text, calligraphy, lettering, red seals, frames, people, buildings, pagodas, mountains, flags, sun, or moon. No bright colors, hard black, clip art, cartoon, glossy rendering, or repeated pattern. Beautiful subtle organic texture.

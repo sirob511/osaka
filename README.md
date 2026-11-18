@@ -51,7 +51,7 @@ The canonical origin is configured in `src/data.mjs`; set it to the actual publi
 
 Photographs show the actual Osaka Garden at various dates, not current conditions. Attribution and license details are in `public/images/credits.json` and the generated credits page. Resized/cropped CC BY-SA images retain their stated share-alike license. License terms apply to the photographs independently of site code.
 
-The decorative blossom watercolor was generated with the built-in OpenAI image tool; its prompt and provenance are in `docs/blossom-prompt.txt`. The final local asset is `public/images/blossom-branch.webp`. It is explicitly identified as illustration, not location photography.
+The decorative blossom watercolor and muted pine ink study were generated with the built-in OpenAI image tool. Their prompts and provenance are in `docs/blossom-prompt.txt` and `docs/ink-pine-prompt.txt`; the local assets are `public/images/blossom-branch.webp` and `public/images/ink-pine.webp`. Both are identified as illustrations, not location photography. The transparent pine artwork is a decorative background, kept away from the main text and reduced in opacity on mobile.
 
 Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM Sans in `public/fonts/`.
 

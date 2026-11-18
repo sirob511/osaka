@@ -548,6 +548,7 @@ a svg {
 }
 .footer-bottom {
   display:flex;
+  justify-content:space-between;
   gap:12px 24px;
   align-items:start;
   border-top:1px solid var(--line);
@@ -555,11 +556,6 @@ a svg {
   font-size:10px;
   line-height:1.7;
   color:var(--muted)
-}
-.footer-bottom p {
-  max-width:600px;
-  margin-bottom:0;
-  margin-right:auto
 }
 .footer-bottom a {
   flex-shrink:0;
@@ -1644,13 +1640,6 @@ a svg {
   .footer-bottom {
     flex-wrap:wrap;
     gap:10px 20px
-  }
-  .footer-bottom p {
-    flex-basis:100%;
-    max-width:none
-  }
-  .footer-bottom a:last-child {
-    margin-left:auto
   }
   .page-intro {
     display:block;

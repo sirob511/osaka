@@ -85,7 +85,7 @@ try {
   assert.equal(status.missing, 404); assert.equal(status.head, 200); assert.equal(status.post, 405);
   assert.equal(status.redirect, origin + '/visit/');
   browser('open', origin + '/missing-page/');
-  assert(evaluate('document.querySelector("h1").textContent.includes("This path ends here")'));
+  assert(evaluate('document.querySelector("h1").textContent.includes("Page not found")'));
   click('.not-found .button');
   assert.equal(evaluate('location.pathname'), '/');
 

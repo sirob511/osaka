@@ -57,7 +57,7 @@ test('future bloom tracker never substitutes historical observations for live da
   assert.match(html, /PRE-SEASON · NO OBSERVATION YET/);
   assert.match(html, /Previous season · For context only/);
   assert.match(html, /historical report, not a forecast for 2027/);
-  assert.match(html, /manual, not a live sensor feed/);
+  assert.match(html, /Reports are updated by hand/);
 });
 
 test('sitemap covers every public page and the error page is not indexed', async () => {

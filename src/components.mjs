@@ -10,13 +10,10 @@ export function photo(name, alt, { priority = false, className = '', sizes = '(m
 }
 export function sourceNote(keys = ['garden']) {
   const names = { garden: 'Park District visitor information', blossoms: 'Park District bloom reports', blossomMap: 'Park District cherry tree map', history: 'Garden of the Phoenix Foundation', designs: 'Foundation design history', museum: 'Chicago History Museum' };
-  return `<aside class="source-note"><span class="eyebrow">Our sources</span><p>Checked <time datetime="${site.checked}">${site.checkedLabel}</time>. ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}. This independent guide is updated by hand; check official notices before traveling.</p></aside>`;
+  return `<aside class="source-note"><p>Sources checked <time datetime="${site.checked}">${site.checkedLabel}</time>. ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}.</p></aside>`;
 }
-export function pageIntro(kicker, title, description, extra = '') {
-  return `<section class="page-intro wrap"><a class="breadcrumb" href="/">The garden ${arrow}</a><div class="intro-heading"><p class="eyebrow">${kicker}</p><h1>${title}</h1></div><div class="intro-summary"><p class="intro-description">${description}</p>${extra}</div></section>`;
-}
-export function visitCta() {
-  return `<section class="visit-cta wrap"><div class="cta-flower">${flower}</div><p class="eyebrow">A little closer than you think</p><h2>Find your moment<br>of <em>quiet.</em></h2><p>On a small island in Jackson Park,<br>a different pace of Chicago awaits.</p>${link('/visit/', 'Plan your visit', 'button dark')}</section>`;
+export function pageIntro(title, description, extra = '') {
+  return `<section class="page-intro wrap"><div class="intro-heading"><h1>${title}</h1></div><div class="intro-summary"><p class="intro-description">${description}</p>${extra}</div></section>`;
 }
 export function layout({ path, title, description, content, className = '', imageName = 'garden-pond', noindex = false }) {
   const nav = [['/', 'Explore'], ['/visit/', 'Visit'], ['/cherry-blossoms/', 'Cherry Blossoms'], ['/history/', 'History'], ['/events/', 'Events']];
@@ -27,6 +24,6 @@ export function layout({ path, title, description, content, className = '', imag
 <body id="top" class="${className}"><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><a class="brand" href="/" aria-label="Osaka Garden Chicago home">${logo}<span>Osaka Garden<small>CHICAGO</small></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button><nav id="primary-nav" aria-label="Main navigation">${nav.map(([href, name]) => `<a href="${href}"${path === href || (href !== '/' && path.startsWith(href)) ? ' aria-current="page"' : ''}>${name}</a>`).join('')}</nav><a class="header-visit" href="/visit/">Plan a visit ${arrow}</a></header>
 <main id="main">${content}</main>
-<footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="/">${logo}<span>Osaka Garden<small>A LITTLE WONDER IN CHICAGO.</small></span></a><p>A garden to discover.<br>A season to remember.</p><nav aria-label="Footer navigation"><a href="/visit/">Plan your visit</a><a href="/cherry-blossoms/2027/">2027 blossom tracker</a><a href="/events/">Around the park</a></nav></div><div class="footer-bottom"><p>An independent guide. Not affiliated with the Chicago Park District or the Garden of the Phoenix Foundation.</p><a href="/credits/">Sources & image credits</a><a href="#top" data-back-top>Back to top ↑</a></div></footer>
+<footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="/">${logo}<span>Osaka Garden<small>CHICAGO</small></span></a><nav aria-label="Footer navigation"><a href="/visit/">Plan your visit</a><a href="/cherry-blossoms/2027/">2027 blossom tracker</a><a href="/events/">Park events</a></nav></div><div class="footer-bottom"><p>An independent guide. Not affiliated with the Chicago Park District or the Garden of the Phoenix Foundation.</p><a href="/credits/">Sources & image credits</a><a href="#top" data-back-top>Back to top ↑</a></div></footer>
 </body></html>`;
 }

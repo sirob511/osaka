@@ -31,6 +31,16 @@ try {
       assert.equal(state.headings, 1, route);
       assert.equal(state.js, true, `Script not running on ${route}`);
       assert.equal(state.fonts, true, `Font failure on ${route}`);
+      if (route === '/') {
+        const map = evaluate(`({visible:document.querySelectorAll('.park-place:not([hidden])').length,selected:document.querySelector('[data-park-place][aria-pressed=true]').dataset.parkPlace,pins:[...document.querySelectorAll('.park-pin')].map(pin=>{const r=pin.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}})})`);
+        assert.equal(map.visible, 1);
+        assert.equal(map.selected, 'garden');
+        for (const pin of map.pins) assert(pin.w >= 44 && pin.h >= 44, 'Map target below 44px');
+        if (width <= 390) for (let i=0;i<map.pins.length;i++) for (let j=i+1;j<map.pins.length;j++) {
+          const a=map.pins[i], b=map.pins[j];
+          assert(!(a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y), `Overlapping map targets ${i}/${j} at ${width}px`);
+        }
+      }
       if (['/', '/visit/', '/cherry-blossoms/2027/'].includes(route) && width !== 320) {
         browser('screenshot', '--full', `test-results/${route === '/' ? 'home' : route.replaceAll('/', '-')}-${width}.png`);
       }
@@ -39,6 +49,30 @@ try {
   }
 
   browser('set', 'viewport', '390', '900');
+  browser('open', origin + '/');
+  for (const place of ['skylanding', 'museum', 'basin', 'meadow', 'republic', 'garden']) {
+    click(`[data-park-place="${place}"]`);
+    assert.equal(evaluate('document.querySelector(".park-place:not([hidden])").id'), `park-place-${place}`);
+    assert.equal(evaluate('document.querySelector("#park-place-picker").value'), place);
+    assert.equal(evaluate('document.querySelectorAll("[data-park-place][aria-pressed=true]").length'), 1);
+  }
+  browser('press', 'ArrowRight');
+  assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'skylanding');
+  browser('press', 'End');
+  assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'republic');
+  browser('press', 'Home');
+  assert.equal(evaluate('document.activeElement.dataset.parkPlace'), 'garden');
+  browser('select', '#park-place-picker', 'skylanding');
+  assert.equal(evaluate('document.querySelector(".park-place:not([hidden])").id'), 'park-place-skylanding');
+  browser('set', 'media', 'light', 'reduced-motion');
+  assert.equal(evaluate('getComputedStyle(document.querySelector(".park-pin[aria-pressed=true] .park-pin-number"),"::after").animationName'), 'none');
+  browser('network', 'route', origin + '/main.js', '--abort');
+  browser('open', origin + '/?fallback-check=1');
+  assert.equal(evaluate('document.documentElement.classList.contains("js")'), false);
+  assert.equal(evaluate('[...document.querySelectorAll(".park-place")].filter(panel=>getComputedStyle(panel).display!=="none").length'), 6);
+  browser('network', 'unroute', origin + '/main.js');
+  console.log('PASS map hotspots, keyboard selection, place picker, reduced motion, and script-free facts.');
+
   browser('open', origin + '/updates/');
   assert.equal(evaluate('location.pathname + location.hash'), '/history/#garden-plans');
   browser('open', origin + '/visit/');

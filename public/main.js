@@ -1,4 +1,43 @@
 document.documentElement.classList.add('js');
+
+document.querySelectorAll('[data-park-explorer]').forEach(explorer => {
+  const pins = [...explorer.querySelectorAll('[data-park-place]')];
+  const panels = [...explorer.querySelectorAll('.park-place')];
+  const picker = explorer.querySelector('select');
+  const announcement = explorer.querySelector('[data-park-announcement]');
+  function selectPlace(id, announce = true) {
+    const selected = pins.find(pin => pin.dataset.parkPlace === id);
+    if (!selected) return;
+    pins.forEach(pin => pin.setAttribute('aria-pressed', String(pin === selected)));
+    panels.forEach(panel => { panel.hidden = panel.id !== `park-place-${id}`; });
+    explorer.querySelectorAll('[data-map-leader]').forEach(line => line.classList.toggle('is-selected', line.dataset.mapLeader === id));
+    picker.value = id;
+    if (announce) {
+      const panel = document.getElementById(`park-place-${id}`);
+      announcement.textContent = `${panel.querySelector('h2').textContent}. ${panel.querySelector('p:not(.park-place-era)').textContent}`;
+    }
+  }
+  pins.forEach((pin, index) => {
+    pin.disabled = false;
+    pin.addEventListener('click', () => selectPlace(pin.dataset.parkPlace));
+    pin.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % pins.length;
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index - 1 + pins.length) % pins.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = pins.length - 1;
+      if (next !== undefined) {
+        event.preventDefault();
+        pins[next].focus({ preventScroll: true });
+        selectPlace(pins[next].dataset.parkPlace);
+      }
+    });
+  });
+  picker.disabled = false;
+  picker.addEventListener('change', () => selectPlace(picker.value));
+  selectPlace(pins[0].dataset.parkPlace, false);
+});
+
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#primary-nav');
 function closeMenu({ restoreFocus = false } = {}) {

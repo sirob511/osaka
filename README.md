@@ -23,7 +23,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 ## Pages
 
-- `/` — visual introduction and main journeys
+- `/` — interactive illustrated park map and main journeys
 - `/visit/` — seasonal hours, directions, parking, access guidance, and FAQ
 - `/cherry-blossoms/` — evergreen blossom guide
 - `/cherry-blossoms/2027/` — dated seasonal notebook
@@ -35,6 +35,7 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 - `src/data.mjs`: source URLs, editorial review dates, event references, bloom record, timeline, and FAQ.
 - `src/pages.mjs`: page content and layouts.
+- `src/park-map.mjs` and `public/park-map.css`: illustrated park explorer, sourced landmark facts, and responsive hotspot positions.
 - `src/components.mjs`: shared navigation, footer, image markup, metadata, and structured data.
 - `public/styles.css`: responsive visual system, print styles, and reduced-motion support.
 - `public/main.js`: accessible navigation, keyboard-operated directions tabs, clipboard feedback, and back-to-top behavior. Core content remains available without JavaScript.
@@ -57,10 +58,12 @@ The decorative blossom watercolor and muted pine ink study were generated with t
 
 The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Keep current bridge access and bloom conditions in the dated page text; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
 
+The homepage park map uses `public/images/jackson-park-map.webp` and its responsive 768px variant. Its prompt and geography review are in `docs/jackson-park-map-prompt.txt`. Hotspot positions are relative to this exact uncropped 3:2 artwork. Keep labels and facts in HTML, and re-check pin placement if changing the image. The map represents selected garden-area and central-park landmarks, not current access or a walking route. All six source-linked facts remain visible when JavaScript is unavailable; animation stops after two cycles and is disabled for reduced motion.
+
 Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM Sans in `public/fonts/`.
 
 ## Checks
 
 `npm test` builds the site and checks route metadata, unique headings and IDs, structured data, internal links and anchors, assets and font references, the sitemap, 404 indexing, photo attribution, and the distinction between future and historical bloom data. Browser QA should also cover phone widths, keyboard navigation, the directions tabs, clipboard-denied feedback, and the no-JavaScript fallback.
 
-Optional: with `agent-browser` and Chromium installed, start the preview and run `npm run test:browser`. It checks every route at 1440, 390, and 320 pixels, then exercises navigation, keyboard tabs, FAQs, clipboard success/denial, HTTP status codes, 404 recovery, and reduced motion. Screenshots go to ignored `test-results/`. Set `PREVIEW_URL` if the preview uses another port, and `AGENT_BROWSER_EXECUTABLE_PATH` if Chromium is installed in a custom location. Check the no-JavaScript fallback separately by disabling page JavaScript in browser settings and reloading `/visit/`; the navigation and all three directions sections should remain visible.
+Optional: with `agent-browser` and Chromium installed, start the preview and run `npm run test:browser`. It checks every route at 1440, 390, and 320 pixels, then exercises map hotspots, keyboard selection, the place picker, script-free map facts, navigation, keyboard tabs, FAQs, clipboard success/denial, HTTP status codes, 404 recovery, and reduced motion. Screenshots go to ignored `test-results/`. Set `PREVIEW_URL` if the preview uses another port, and `AGENT_BROWSER_EXECUTABLE_PATH` if Chromium is installed in a custom location. Check the no-JavaScript fallback separately by disabling page JavaScript in browser settings and reloading `/visit/`; the navigation and all three directions sections should remain visible.

@@ -1,0 +1,92 @@
+.park-hero { padding-top:14px }
+.park-heading { display:flex; align-items:end; justify-content:space-between; gap:36px; padding-bottom:26px }
+.park-heading h1 { font-size:clamp(36px,3.65vw,54px); line-height:1.12; margin:0; max-width:860px }
+.park-heading>p { font-size:12px; color:var(--muted); margin:0 0 2px; line-height:1.7; flex-shrink:0 }
+.park-explorer { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:30px; align-items:start }
+.park-map-figure { min-width:0 }
+.park-map-canvas { position:relative; aspect-ratio:3/2; background:#f1ecdf; isolation:isolate }
+.park-map-canvas>img { width:100%; height:auto }
+.park-map-leaders { position:absolute; inset:0; width:100%; height:100%; pointer-events:none }
+.park-map-leaders path { stroke:#526b56; stroke-width:1; vector-effect:non-scaling-stroke; fill:none; opacity:.65 }
+.park-map-leaders circle { fill:var(--green); stroke:var(--cream); stroke-width:.15 }
+.park-map-leaders .is-selected path { stroke:#985d48; stroke-width:1.5; opacity:1 }
+.park-map-leaders .is-selected circle { fill:#985d48 }
+.park-pin { position:absolute; left:var(--pin-x); top:var(--pin-y); transform:translate(-22px,-22px); min-height:44px; border:0; display:flex; align-items:center; gap:3px; padding:0; background:none; color:var(--dark); text-align:left; z-index:1 }
+.park-pin-number { display:grid; place-items:center; position:relative; width:32px; height:32px; margin:6px; flex-shrink:0; border:1px solid var(--green); border-radius:50%; background:#faf7ed; font-size:12px; font-weight:500; box-shadow:0 2px 8px #2c3d3215 }
+.park-pin-label { display:flex; flex-direction:column; background:#faf7edf2; padding:5px 9px 5px 6px; line-height:1.4; border-radius:2px; white-space:nowrap; box-shadow:0 2px 8px #2c3d3206 }
+.park-pin-label strong { font-size:12px }
+.park-pin-label small { font-size:9px; color:#596350 }
+.park-pin-right { flex-direction:row-reverse; transform:translate(calc(-100% + 22px),-22px) }
+.park-pin-right .park-pin-label { text-align:right; padding:5px 6px 5px 9px }
+.park-pin[aria-pressed=true] { z-index:2 }
+.park-pin[aria-pressed=true] .park-pin-number { background:var(--green); color:var(--cream); border-color:var(--green) }
+.park-pin:hover .park-pin-number { background:var(--paper) }
+.park-pin[aria-pressed=true]:hover .park-pin-number { background:var(--dark) }
+.js .park-pin[aria-pressed=true] .park-pin-number:after { content:''; position:absolute; inset:-1px; border:1px solid var(--green); border-radius:50%; animation:map-pulse 2.2s ease-out 2; pointer-events:none }
+@keyframes map-pulse { 0% { transform:scale(1); opacity:.6 } 80%,100% { transform:scale(1.65); opacity:0 } }
+.park-map-caption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding-top:10px; font-size:9px; color:var(--muted); line-height:1.5 }
+.park-map-caption a { flex-shrink:0 }
+.park-guide { border-top:1px solid var(--line); padding-top:14px; min-width:0 }
+.park-picker { margin-bottom:24px }
+.park-picker label { display:block; font-size:10px; color:var(--muted); margin-bottom:6px }
+.park-picker select { font:inherit; font-size:12px; color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--line); padding:9px 24px 9px 0; border-radius:0; width:100%; cursor:pointer }
+.park-picker select:focus-visible { outline:2px solid #9c593f; outline-offset:4px }
+.park-place-era { font-family:var(--serif); font-size:47px; line-height:1; color:#8b795a; margin-bottom:14px }
+.park-place h2 { font-size:33px; margin-bottom:18px; line-height:1.12 }
+.park-place>p:not(.park-place-era) { font-size:12px; line-height:1.85; margin-bottom:17px }
+.park-place-tip { color:var(--muted); border-top:1px solid var(--line); padding-top:14px }
+.park-place>.text-link { font-size:11px; gap:14px; padding-bottom:7px }
+.park-place-source { display:block; width:fit-content; font-size:9px; line-height:1.7; margin-top:18px; color:var(--muted); text-decoration:none }
+.park-place-source:hover { text-decoration:underline }
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
+html:not(.js) .park-picker { display:none }
+html:not(.js) .park-place+.park-place { border-top:1px solid var(--line); padding-top:24px; margin-top:30px }
+html:not(.js) .park-pin { cursor:default }
+@media(min-width:801px) { .js .park-place-panels { min-height:405px } }
+@media(max-width:1100px) {
+  .park-heading { display:block }
+  .park-heading>p { margin-top:12px }
+  .park-heading>p br { display:none }
+  .park-explorer { grid-template-columns:minmax(0,1fr) 260px; gap:22px }
+  .park-pin-label strong { font-size:10px }
+  .park-pin-label small { font-size:8px }
+  .park-place h2 { font-size:29px }
+}
+@media(max-width:800px) {
+  .park-explorer { grid-template-columns:1fr; gap:22px }
+  .park-heading { padding-bottom:20px }
+  .park-heading h1 { max-width:600px; font-size:clamp(32px,5.5vw,44px) }
+  .park-guide { display:grid; grid-template-columns:1fr 2fr; gap:24px }
+  .park-place-era { font-size:36px }
+  .park-place h2 { font-size:32px; margin-bottom:13px }
+  .park-picker { margin:0 }
+  .park-pin-label strong { font-size:12px }
+  .park-pin-label small { font-size:9px }
+}
+@media(max-width:520px) {
+  .park-hero { padding-top:10px }
+  .park-heading h1 { font-size:34px; line-height:1.08 }
+  .park-heading>p { font-size:11px; line-height:1.7; max-width:310px; margin-top:10px }
+  .park-pin-label { display:none }
+  .park-pin-right { transform:translate(-22px,-22px) }
+  .park-pin-number { width:27px; height:27px; margin:8.5px; font-size:11px }
+  .park-map-caption { font-size:8px }
+  .park-guide { display:block; padding-top:12px }
+  .park-picker { margin-bottom:18px }
+  .park-picker label { display:none }
+  .park-picker select { font-size:13px; padding-top:0; padding-bottom:10px }
+  .park-place-era { float:right; font-size:30px; margin:0 0 12px 12px }
+  .park-place h2 { font-size:29px; padding-top:2px }
+  .park-place>p:not(.park-place-era) { font-size:12px }
+  .park-place-tip { padding-top:10px }
+  .park-place-source { margin-top:12px }
+}
+@media(prefers-reduced-motion:reduce) { .js .park-pin[aria-pressed=true] .park-pin-number:after { animation:none; display:none } }
+@media print {
+  .park-explorer { display:block }
+  .park-guide { display:block }
+  .park-picker,.park-place-source,.park-map-caption>a { display:none }
+  .park-place[hidden] { display:block!important }
+  .park-place { break-inside:avoid; margin-top:20px }
+  .park-pin-number:after { display:none }
+}

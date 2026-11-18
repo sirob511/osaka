@@ -17,7 +17,9 @@ npm run build
 npm test
 ```
 
-The build writes a complete static website to `dist/`, including individual route directories, locally hosted assets, a sitemap, robots.txt, and a custom 404 page. Publish `dist/` with any static host configured to serve directory indexes and use `404.html` for missing paths. The included server is for local preview. No deployment or remote repository is configured.
+The build writes a complete static website to `dist/`, including individual route directories, locally hosted assets, a sitemap, robots.txt, and a custom 404 page. Publish `dist/` with any static host configured to serve directory indexes and use `404.html` for missing paths. The included server is for local preview.
+
+For Vercel, `vercel.json` selects the Other framework preset, runs `npm run build`, and publishes `dist/`. Trailing slashes match the generated directory routes. Keep this output setting: `public/` contains only source assets, so publishing it would leave the homepage and other pages missing. The GitHub repository is connected to Vercel, which deploys pushes to `main`.
 
 ## Pages
 

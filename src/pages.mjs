@@ -41,7 +41,7 @@ export const pages = [
           <img src="/images/cherry-blossom-map.webp" srcset="/images/cherry-blossom-map-768.webp 768w, /images/cherry-blossom-map.webp 1536w" sizes="(max-width: 650px) calc(100vw - 44px), (max-width: 1100px) calc(100vw - 80px), 1360px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Illustrated north-up map of Jackson Park. Pink cherry tree areas flank the museum’s South Portico, the west and east banks of the Columbian Basin, and northern Wooded Island near Osaka Garden. Music Court parking is southeast of the basin." aria-describedby="blossom-map-caption">
           <span class="map-expand" aria-hidden="true">Open full-size map ↗</span>
         </a>
-        <figcaption id="blossom-map-caption" class="map-caption"><span><i class="map-key-dot" aria-hidden="true"></i> Pink canopies mark approximate cherry tree areas.</span><span>Illustrated guide · Not to scale · Not a live bloom report</span></figcaption>
+        <figcaption id="blossom-map-caption" class="map-caption"><span><i class="map-key-dot" aria-hidden="true"></i> Pink canopies mark approximate cherry tree areas.</span><span>Illustrated guide · Not a live bloom report</span></figcaption>
       </figure>
       <div class="map-locations" aria-label="Where to find the cherry trees">
         <article><h2>The South Portico</h2><p>Look on either side of the museum’s south-facing portico, above the basin.</p></article>

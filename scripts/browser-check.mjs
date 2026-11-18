@@ -16,6 +16,65 @@ function click(selector) {
   browser('scrollintoview', selector);
   browser('click', selector);
 }
+const lanternCases = [
+  ['message', 'A message', 'Names, memories, or hopes for peace.'],
+  ['light', 'A light', 'In the Obon tradition, a guide for returning spirits.'],
+  ['water', 'On the water', 'Paper lanterns float on a small base.'],
+  ['garden', 'Osaka Garden pond', 'The garden’s water setting on northern Wooded Island.'],
+  ['skylanding', 'Yoko Ono’s SKYLANDING', 'Twelve rising petals beside the garden entrance.']
+];
+const lanternSelector = place => `.lantern-hotspot.lantern-marker-${place}`;
+function focusLantern(place) {
+  evaluate(`(() => { const summary = document.querySelector(${JSON.stringify(lanternSelector(place) + ' summary')}); summary.scrollIntoView({block:'center',behavior:'instant'}); summary.focus({preventScroll:true}); })()`);
+}
+function lanternIsOpen(place) { return evaluate(`document.querySelector(${JSON.stringify(lanternSelector(place))}).open`); }
+function lanternPins() {
+  return evaluate(`Array.from(document.querySelectorAll('.lantern-hotspot'), hotspot => {
+    const pin = hotspot.querySelector('summary').getBoundingClientRect();
+    const art = hotspot.closest('.lantern-art').getBoundingClientRect();
+    return {group:hotspot.name,x:pin.x-art.x,y:pin.y-art.y,w:pin.width,h:pin.height};
+  })`);
+}
+function assertLanternCard(place, title, description, context) {
+  const state = evaluate(`(() => {
+    const hotspot = document.querySelector(${JSON.stringify(lanternSelector(place))});
+    const card = hotspot.querySelector('.lantern-hotspot-card');
+    const bounds = card.getBoundingClientRect();
+    return {open:hotspot.open,title:card.querySelector('strong').textContent,description:card.querySelector('p').textContent,
+      visible:card.checkVisibility(),left:bounds.left,right:bounds.right,top:bounds.top,bottom:bounds.bottom,
+      viewportWidth:innerWidth,viewportHeight:innerHeight,overflow:document.documentElement.scrollWidth>innerWidth};
+  })()`);
+  assert.equal(state.open, true, `${context}: ${place} did not open`);
+  assert.equal(state.visible, true, `${context}: ${place} card is hidden`);
+  assert.equal(state.title, title, `${context}: incorrect marker title`);
+  assert.equal(state.description, description, `${context}: incorrect marker explanation`);
+  assert(state.left >= -1 && state.right <= state.viewportWidth + 1, `${context}: ${place} card exceeds viewport width`);
+  assert(state.top >= -1 && state.bottom <= state.viewportHeight + 1, `${context}: ${place} card exceeds viewport height`);
+  assert.equal(state.overflow, false, `${context}: ${place} caused horizontal overflow`);
+}
+function checkLanternLayout(width) {
+  const pins = lanternPins();
+  assert.equal(pins.length, 5, 'Expected three lantern and two location markers');
+  for (const pin of pins) assert(pin.w >= 44 && pin.h >= 44, `Lantern target below 44px at ${width}px`);
+  for (let i=0;i<pins.length;i++) for (let j=i+1;j<pins.length;j++) {
+    const a=pins[i], b=pins[j];
+    if (a.group !== b.group) continue;
+    assert(!(a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y), `Overlapping lantern targets ${i}/${j} at ${width}px`);
+  }
+  for (const [place, title, description] of lanternCases) {
+    focusLantern(place);
+    const before = lanternPins();
+    browser('click', lanternSelector(place) + ' summary');
+    assertLanternCard(place, title, description, `${width}px`);
+    const after = lanternPins();
+    after.forEach((pin, index) => {
+      assert(Math.abs(pin.x-before[index].x) < 1 && Math.abs(pin.y-before[index].y) < 1,
+        `Opening ${place} moved marker ${index} at ${width}px`);
+    });
+    browser('click', lanternSelector(place) + ' summary');
+    assert.equal(lanternIsOpen(place), false, `Clicking ${place} again must close its card`);
+  }
+}
 mkdirSync('test-results', { recursive: true });
 
 try {
@@ -41,6 +100,7 @@ try {
           assert(!(a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y), `Overlapping map targets ${i}/${j} at ${width}px`);
         }
       }
+      if (route === '/toro-nagashi/') checkLanternLayout(width);
       if (['/', '/visit/', '/cherry-blossoms/', '/toro-nagashi/'].includes(route) && width !== 320) {
         browser('screenshot', '--full', `test-results/${route === '/' ? 'home' : route.replaceAll('/', '-')}-${width}.png`);
       }
@@ -80,6 +140,74 @@ try {
   assert.equal(evaluate('document.querySelector(".site-header").getBoundingClientRect().height'), 66);
   browser('network', 'unroute', origin + '/main.js');
   console.log('PASS map hotspots, keyboard selection, place picker, reduced motion, script-free facts, and independent header initialization.');
+
+  browser('open', origin + '/toro-nagashi/');
+  evaluate('document.fonts.ready.then(() => true)');
+  focusLantern('message');
+  browser('press', 'Enter');
+  assert.equal(lanternIsOpen('message'), true, 'Enter must open a lantern disclosure');
+  browser('press', 'Space');
+  assert.equal(lanternIsOpen('message'), false, 'Space must close an open disclosure');
+  browser('press', 'Space');
+  assert.equal(lanternIsOpen('message'), true, 'Space must open a closed disclosure');
+  browser('press', 'Tab');
+  assert.equal(evaluate('document.activeElement.matches(".lantern-marker-message .lantern-hotspot-close")'), true);
+  browser('press', 'Escape');
+  assert.equal(lanternIsOpen('message'), false, 'Escape from card controls must close the disclosure');
+  assert.equal(evaluate('document.activeElement.matches(".lantern-marker-message summary")'), true, 'Escape must return focus to its marker');
+  browser('press', 'Enter');
+  click('.lantern-marker-message .lantern-hotspot-card p');
+  assert.equal(lanternIsOpen('message'), true, 'Clicking explanation text must keep its card open');
+  browser('press', 'Escape');
+  assert.equal(lanternIsOpen('message'), false, 'Escape must also work after clicking non-focusable explanation text');
+  assert.equal(evaluate('document.activeElement.matches(".lantern-marker-message summary")'), true);
+  browser('press', 'Enter');
+  click('.lantern-marker-message .lantern-hotspot-close');
+  assert.equal(lanternIsOpen('message'), false);
+  assert.equal(evaluate('document.activeElement.matches(".lantern-marker-message summary")'), true, 'Close button must return focus to its marker');
+  for (const [first, second] of [['message', 'light'], ['garden', 'skylanding']]) {
+    focusLantern(first);
+    browser('press', 'Enter');
+    focusLantern(second);
+    browser('press', 'Enter');
+    assert.equal(lanternIsOpen(first), false, 'Opening another marker in the same image must close the previous card');
+    assert.equal(lanternIsOpen(second), true);
+    browser('press', 'Escape');
+    assert.equal(lanternIsOpen(second), false);
+  }
+  focusLantern('water');
+  browser('press', 'Enter');
+  click('.menu-toggle');
+  assert.equal(evaluate('document.querySelectorAll(".lantern-hotspot[open]").length'), 0, 'Outside click must dismiss the card');
+  assert.equal(evaluate('document.activeElement.matches(".menu-toggle")'), true, 'Outside dismissal must not steal focus');
+  browser('press', 'Escape');
+
+  browser('network', 'route', origin + '/main.js', '--abort');
+  browser('open', origin + '/toro-nagashi/?fallback-check=1');
+  assert.equal(evaluate('document.documentElement.classList.contains("js")'), false);
+  evaluate('document.fonts.ready.then(() => true)');
+  evaluate('document.querySelectorAll("img").forEach(image => image.loading = "eager")');
+  browser('wait', '--fn', 'Array.from(document.images).every(image => image.complete && image.naturalWidth > 0)');
+  assert.equal(evaluate('[...document.querySelectorAll(".lantern-hotspot-close")].every(button=>button.hidden)'), true,
+    'Script-only close buttons must remain hidden when JavaScript fails');
+  for (const [place, title, description] of lanternCases) {
+    focusLantern(place);
+    browser('press', 'Enter');
+    assertLanternCard(place, title, description, 'Without main.js');
+    browser('press', 'Space');
+    assert.equal(lanternIsOpen(place), false, `Native summary must close ${place} without JavaScript`);
+  }
+  focusLantern('message');
+  browser('press', 'Enter');
+  focusLantern('light');
+  browser('press', 'Enter');
+  assert.equal(lanternIsOpen('message'), false, 'Native same-image exclusivity must work without main.js');
+  assert.equal(lanternIsOpen('light'), true);
+  browser('press', 'Space');
+  click('.lantern-location-map figcaption a');
+  assert.equal(evaluate('location.pathname + location.hash'), '/#park-title', 'The full park map link must remain functional');
+  browser('network', 'unroute', origin + '/main.js');
+  console.log('PASS lantern marker explanations, keyboard disclosure controls, dismissal focus, same-image exclusivity, and script-free interaction.');
 
   browser('open', origin + '/updates/');
   assert.equal(evaluate('location.pathname + location.hash'), '/history/#garden-plans');

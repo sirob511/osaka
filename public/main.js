@@ -1,5 +1,30 @@
 document.documentElement.classList.add('js');
 
+const lanternHotspots = [...document.querySelectorAll('.lantern-hotspot')];
+lanternHotspots.forEach(hotspot => {
+  const summary = hotspot.querySelector('summary');
+  const close = hotspot.querySelector('.lantern-hotspot-close');
+  function dismiss() {
+    hotspot.open = false;
+    summary.focus({ preventScroll: true });
+  }
+  close.hidden = false;
+  close.addEventListener('click', dismiss);
+});
+document.addEventListener('keydown', event => {
+  const openHotspot = lanternHotspots.find(hotspot => hotspot.open);
+  if (event.key === 'Escape' && openHotspot) {
+    event.preventDefault();
+    openHotspot.open = false;
+    openHotspot.querySelector('summary').focus({ preventScroll: true });
+  }
+});
+document.addEventListener('click', event => {
+  lanternHotspots.forEach(hotspot => {
+    if (hotspot.open && !hotspot.contains(event.target)) hotspot.open = false;
+  });
+});
+
 document.querySelectorAll('[data-park-explorer]').forEach(explorer => {
   const pins = [...explorer.querySelectorAll('[data-park-place]')];
   const panels = [...explorer.querySelectorAll('.park-place')];

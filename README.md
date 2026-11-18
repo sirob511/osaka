@@ -52,13 +52,15 @@ The canonical origin is configured in `src/data.mjs`; set it to the actual publi
 
 ## Assets
 
-Photographs show the actual Osaka Garden at various dates, not current conditions. Attribution and license details are in `public/images/credits.json` and the generated credits page. Resized/cropped CC BY-SA images retain their stated share-alike license. License terms apply to the photographs independently of site code.
+Photographs show the actual Osaka Garden and Jackson Park landmarks at various dates, not current conditions. Attribution and license details are in `public/images/credits.json` and the generated credits page. Resized/cropped CC BY-SA images retain their stated share-alike license. License terms apply to the photographs independently of site code.
 
 The decorative blossom watercolor and muted pine ink study were generated with the built-in OpenAI image tool. Their prompts and provenance are in `docs/blossom-prompt.txt` and `docs/ink-pine-prompt.txt`; the local assets are `public/images/blossom-branch.webp` and `public/images/ink-pine.webp`. Both are identified as illustrations, not location photography. The transparent pine artwork is a decorative background, kept away from the main text and reduced in opacity on mobile.
 
 The custom cherry blossom map is `public/images/cherry-blossom-map.webp`, with a 768px responsive variant. Its generation prompt, geographic references, and review notes are in `docs/cherry-blossom-map-prompt.txt`. The map shows approximate tree areas and simplified distances. Direct visitors to official sources for current bridge access and bloom conditions; the artwork is not a live report. The blossom guide includes a full-size image link and a readable location key.
 
 The homepage park map uses `public/images/jackson-park-map.webp` and its responsive 768px variant. Its prompt and geography review are in `docs/jackson-park-map-prompt.txt`. Hotspot positions are relative to this exact uncropped 3:2 artwork. Keep labels and facts in HTML, and re-check pin placement if changing the image. The map represents selected garden-area and central-park landmarks, not current access or a walking route. All six source-linked facts remain visible when JavaScript is unavailable; animation stops after two cycles and is disabled for reduced motion.
+
+Each map detail panel includes an actual landmark photograph and a link to its credit. Park photos use local 640px and 320px WebP variants; the garden uses the existing bridge photograph. Source and identity notes are in `docs/park-photo-sources.json`. Keep the full Statue of the Republic visible in its image frame.
 
 The original lantern study uses `public/images/toro-nagashi-lantern.webp` and its 768px variant. Its built-in image-generation prompt and provenance are in `docs/toro-nagashi-lantern-prompt.txt`. It illustrates the tradition, not the Chicago event or its supplied materials. The numbered labels remain in HTML.
 

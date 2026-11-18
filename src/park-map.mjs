@@ -1,33 +1,39 @@
-import { escape, link } from './components.mjs';
+import { escape, link, photo } from './components.mjs';
 
 // Positions follow the illustrated artwork, not geographic coordinates.
 export const parkPlaces = [
   { id: 'garden', name: 'Osaka Garden', short: 'Osaka Garden', note: '1935 · Japanese stroll garden', year: '1935',
+    photo: { file: 'garden-bridge', alt: 'Osaka Garden’s wooden moon bridge crossing the pond, surrounded by shaped trees and rocks.' },
     x: 43.75, y: 51, pinX: 58, pinY: 40,
     fact: 'A Japanese stroll garden opened here in 1935, beside the Phoenix Pavilion. The Osaka name followed in 1993, honoring Chicago’s sister-city friendship.',
     detail: 'Find the garden on the northeast side of Wooded Island. Admission is free; the garden has its own seasonal hours.',
     href: '/visit/', action: 'Garden hours & directions', source: 'https://www.gardenofthephoenix.org/', sourceName: 'Garden of the Phoenix Foundation' },
   { id: 'skylanding', name: 'SKYLANDING', short: 'SKYLANDING', note: 'Yoko Ono · 2016', year: '2016',
+    photo: { file: 'park-skylanding', alt: 'Steel lotus petals of Yoko Ono’s SKYLANDING rising from the grass on Wooded Island in Jackson Park.', width: 640, height: 480, smallWidth: 320, fit: 'contain' },
     x: 35.7, y: 46.1, pinX: 16, pinY: 58,
     fact: 'Twelve lotus petals rise from the former Phoenix Pavilion site. Yoko Ono’s sculpture was dedicated in 2016 as a symbol of peace.',
     detail: 'Look just west of Osaka Garden, in the open lawn on Wooded Island.',
     href: 'https://www.chicagoparkdistrict.com/parks-facilities/sky-landing-artwork', action: 'Explore the artwork', source: 'https://www.chicagoparkdistrict.com/parks-facilities/sky-landing-artwork', sourceName: 'Chicago Park District' },
   { id: 'museum', name: 'Griffin Museum of Science and Industry', short: 'Griffin MSI', note: '1893 · Palace of Fine Arts', year: '1893',
+    photo: { file: 'park-museum', alt: 'The columned south facade and dome of Chicago’s Museum of Science and Industry across the Columbian Basin, framed by leafy trees.', width: 640, height: 480, smallWidth: 320 },
     x: 37.8, y: 10.7, pinX: 13, pinY: 6,
     fact: 'The museum occupies the Palace of Fine Arts from the 1893 World’s Fair. Its classical exterior was rebuilt in stone in the early 1930s.',
     detail: 'The museum stands directly north of the Columbian Basin. Museum tickets and hours are separate from the park.',
     href: 'https://www.griffinmsi.org/', action: 'Visit the museum website', source: 'https://webapps1.chicago.gov/landmarksweb/web/landmarkdetails.htm?lanId=1376', sourceName: 'City of Chicago Landmarks' },
   { id: 'basin', name: 'Columbian Basin', short: 'Cherry blossoms', note: 'Around the Columbian Basin', year: 'Spring',
+    photo: { file: 'park-basin', alt: 'The Columbian Basin reflecting the Museum of Science and Industry, with trees along its eastern bank.', width: 640, height: 359, smallWidth: 320 },
     x: 35.8, y: 24.6, pinX: 14, pinY: 32,
     fact: 'The basin’s banks are the heart of Jackson Park’s cherry blossom display. More trees grow beside the museum and on northern Wooded Island.',
     detail: 'The bloom window changes with the weather. Use the tree-area map and official bloom updates to plan a spring visit.',
     href: '/cherry-blossoms/', action: 'Find the cherry trees', source: 'https://www.chicagoparkdistrict.com/cherry-blossoms', sourceName: 'Chicago Park District' },
   { id: 'meadow', name: 'Bobolink Meadow', short: 'Bobolink Meadow', note: 'Birds & prairie habitat', year: 'Nature',
+    photo: { file: 'park-meadow', alt: 'Autumn prairie grasses in Bobolink Meadow in Jackson Park, photographed close up.', width: 640, height: 427, smallWidth: 320 },
     x: 59.9, y: 55.6, pinX: 78, pinY: 59,
     fact: 'Tallgrass prairie and woodland beside the lagoon offer habitat for birds and butterflies. It is a place to slow down and watch for wildlife.',
     detail: 'Find the meadow east of Wooded Island, across the East Lagoon. Regular bird walks explore this part of the park.',
     href: '/events/', action: 'Find a bird walk', source: 'https://sites.google.com/view/bobolinkvolunteers/history', sourceName: 'Bobolink Meadow volunteers' },
   { id: 'republic', name: 'Statue of the Republic', short: 'The Golden Lady', note: '1918 · A World’s Fair memorial', year: '1918',
+    photo: { file: 'park-republic', alt: 'The gilded Statue of the Republic, erected in 1918, standing with raised arms on its stone pedestal in Jackson Park.', width: 640, height: 429, smallWidth: 320, fit: 'contain' },
     x: 71, y: 80, pinX: 52, pinY: 84,
     fact: 'The 24-foot gilded bronze statue commemorates the 1893 World’s Fair. Installed in 1918, it is a smaller version of the fair’s original monument.',
     detail: 'Look farther south, at Hayes and Richards Drives. This landmark is beyond the garden and basin area.',
@@ -48,7 +54,7 @@ export function parkMap() {
       </div>
       <div class="park-guide">
         <div class="park-picker"><label for="park-place-picker">Explore a place</label><select id="park-place-picker" disabled>${parkPlaces.map((p, i) => `<option value="${p.id}">${String(i + 1).padStart(2, '0')} · ${p.name}</option>`).join('')}</select></div>
-        <div class="park-place-panels">${parkPlaces.map((p, i) => `<article class="park-place" id="park-place-${p.id}" aria-labelledby="park-place-title-${p.id}"><p class="park-place-era">${p.year}</p><h2 id="park-place-title-${p.id}">${p.name}</h2><p>${p.fact}</p><p class="park-place-tip">${p.detail}</p>${link(p.href, p.action)}<a class="park-place-source" href="${escape(p.source)}">Source: ${p.sourceName} ↗</a></article>`).join('')}</div>
+        <div class="park-place-panels">${parkPlaces.map(p => `<article class="park-place" id="park-place-${p.id}" aria-labelledby="park-place-title-${p.id}"><p class="park-place-era">${p.year}</p><h2 id="park-place-title-${p.id}">${p.name}</h2><figure class="park-place-photo${p.photo.fit === 'contain' ? ' park-place-photo-contain' : ''}">${photo(p.photo.file, p.photo.alt, { ...p.photo, sizes: '(max-width: 520px) calc(100vw - 44px), (max-width: 800px) 60vw, (max-width: 1100px) 260px, 300px' })}<figcaption><a href="/credits/#photo-${p.photo.file}">Photo credit</a></figcaption></figure><p>${p.fact}</p><p class="park-place-tip">${p.detail}</p>${link(p.href, p.action)}<a class="park-place-source" href="${escape(p.source)}">Source: ${p.sourceName} ↗</a></article>`).join('')}</div>
         <p class="visually-hidden" role="status" aria-live="polite" data-park-announcement></p>
       </div>
     </div>

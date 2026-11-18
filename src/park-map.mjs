@@ -56,7 +56,7 @@ export function parkMap() {
           <svg class="park-map-leaders" viewBox="0 0 100 66.6667" aria-hidden="true">${parkPlaces.map((p, i) => `<g data-map-leader="${p.id}"${i === 0 ? ' class="is-selected"' : ''}><path d="M${p.x} ${p.y * 2 / 3} L${p.pinX} ${p.pinY * 2 / 3}"/><circle cx="${p.x}" cy="${p.y * 2 / 3}" r=".4"/></g>`).join('')}</svg>
           <div class="park-pins" aria-label="Places on the map">${parkPlaces.map((p, i) => `<button type="button" class="park-pin${p.pinX > 55 ? ' park-pin-right' : ''}" style="--pin-x:${p.pinX}%;--pin-y:${p.pinY}%" data-park-place="${p.id}" aria-label="Explore ${escape(p.name)}" aria-controls="park-place-${p.id}" aria-pressed="${i === 0}" disabled><span class="park-pin-number">${i + 1}</span><span class="park-pin-label"><strong>${p.short}</strong><small>${p.note}</small></span></button>`).join('')}</div>
         </div>
-        <div class="park-map-caption"><span>Garden &amp; nearby landmarks · Illustrated guide</span><a href="/images/jackson-park-map.webp" target="_blank" rel="noopener">View artwork ↗</a></div>
+        <div class="park-map-caption"><a href="/images/jackson-park-map.webp" target="_blank" rel="noopener">View artwork ↗</a></div>
       </div>
       <div class="park-guide">
         <div class="park-picker"><label for="park-place-picker">Explore a place</label><select id="park-place-picker" disabled>${parkPlaces.map((p, i) => `<option value="${p.id}">${String(i + 1).padStart(2, '0')} · ${p.name}</option>`).join('')}</select></div>

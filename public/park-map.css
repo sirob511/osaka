@@ -24,7 +24,7 @@
 .park-pin[aria-pressed=true]:hover .park-pin-number { background:var(--dark) }
 .js .park-pin[aria-pressed=true] .park-pin-number:after { content:''; position:absolute; inset:-1px; border:1px solid var(--green); border-radius:50%; animation:map-pulse 2.2s ease-out 2; pointer-events:none }
 @keyframes map-pulse { 0% { transform:scale(1); opacity:.6 } 80%,100% { transform:scale(1.65); opacity:0 } }
-.park-map-caption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding-top:10px; font-size:9px; color:var(--muted); line-height:1.5 }
+.park-map-caption { display:flex; justify-content:flex-end; padding-top:10px; font-size:9px; color:var(--muted); line-height:1.5 }
 .park-map-caption a { flex-shrink:0 }
 .park-guide { border-top:1px solid var(--line); padding-top:14px; min-width:0 }
 .park-picker { margin-bottom:18px }

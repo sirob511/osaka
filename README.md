@@ -44,6 +44,8 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 
 Keep visitor-facing guidance evergreen: explain typical seasons, recurring traditions, locations, and what visitors can expect. Link to the Park District or event organizer for changing hours, closures, dates, registration, and bloom conditions. Do not publish year-specific trackers, expired event programs, or next-edition placeholders. Meaningful historical dates belong in the garden's story; internal research and review dates remain useful for maintenance. The full policy is in `docs/evergreen-content-policy.txt`.
 
+Keep visible copy useful and spare. Avoid decorative captions, redundant labels, and slogans; add text only when it helps visitors understand a place, choose an action, or plan a visit.
+
 The garden’s own Park District page takes precedence over older general park and blossom pages for operating hours. Event-specific admission and participation rules can differ from ordinary visiting rules, so direct visitors to the organizer's current instructions. No automatic calendar or update service is configured; do not label this guide “live.”
 
 Retired pages permanently redirect in Vercel and the local server: `/updates/` to `/history/#garden-plans`, and `/cherry-blossoms/2027/` to `/cherry-blossoms/#bloom-updates`. Configure the same redirects when deploying to another static host. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Research records remain in `docs/events-and-revitalization-review.txt` and `docs/toro-nagashi-research.txt`.

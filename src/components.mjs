@@ -9,10 +9,6 @@ export function link(href, text, type = 'text-link') { return `<a class="${type}
 export function photo(name, alt, { priority = false, className = '', sizes = '(max-width: 700px) 100vw, 50vw', width = 1600, height = name === 'garden-path' ? 2173 : name === 'garden-bridge' ? 900 : 1200, smallWidth = 720 } = {}) {
   return `<img class="${className}" src="/images/${name}.webp" srcset="/images/${name}-${smallWidth}.webp ${smallWidth}w, /images/${name}.webp ${width}w" sizes="${sizes}" alt="${escape(alt)}" width="${width}" height="${height}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
-export function sourceNote(keys = ['garden']) {
-  const names = { garden: 'Park District visitor information', blossoms: 'Park District bloom reports', blossomMap: 'Park District cherry tree map', history: 'Garden of the Phoenix Foundation', designs: 'Foundation design history', museum: 'Chicago History Museum' };
-  return `<aside class="source-note"><p>Sources: ${keys.map(key => `<a href="${site.sources[key]}">${names[key]}</a>`).join(' · ')}.</p></aside>`;
-}
 export function pageIntro(title, description, extra = '') {
   return `<section class="page-intro wrap"><div class="intro-heading"><h1>${title}</h1></div><div class="intro-summary"><p class="intro-description">${description}</p>${extra}</div></section>`;
 }

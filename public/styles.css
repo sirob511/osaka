@@ -521,16 +521,19 @@ a svg {
   flex-shrink:0
 }
 .site-footer {
-  margin-top:48px;
+  margin-top:32px;
   border-top:1px solid var(--line);
-  padding-top:46px
+  padding-top:22px
+}
+#main>.section-space:last-child,#main>.faq-section:last-child,#main>.lantern-location:last-child {
+  padding-bottom:0
 }
 .footer-top {
   display:flex;
-  align-items:start;
+  align-items:center;
   justify-content:space-between;
-  gap:45px;
-  padding-bottom:42px
+  gap:24px;
+  padding-bottom:18px
 }
 .footer-top .brand>span {
   font-size:27px
@@ -540,21 +543,24 @@ a svg {
 }
 .footer-top nav {
   display:flex;
-  flex-direction:column;
-  gap:5px;
-  min-width:170px
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:4px 24px
 }
 .footer-top nav a {
-  font-size:11px;
+  display:flex;
+  align-items:center;
+  min-height:32px;
+  font-size:12px;
   text-decoration:none
 }
 .footer-bottom {
   display:flex;
-  gap:30px;
+  gap:12px 24px;
   align-items:start;
   border-top:1px solid var(--line);
-  padding-block:22px 30px;
-  font-size:8px;
+  padding-block:14px 18px;
+  font-size:10px;
   line-height:1.7;
   color:var(--muted)
 }
@@ -805,23 +811,6 @@ a svg {
   margin-bottom:25px;
   color:var(--muted)
 }
-.source-note {
-  max-width:1280px;
-  width:calc(100% - 128px);
-  margin:60px auto 0;
-  border-top:1px solid var(--line);
-  padding-top:25px;
-  color:var(--muted)
-}
-.wrap .source-note {
-  width:100%
-}
-.source-note p {
-  font-size:10px;
-  line-height:1.9;
-  max-width:850px;
-  margin-bottom:0
-}
 .blossom-page .page-intro:before {
   background-image:url('/images/blossom-branch.webp');
   opacity:.14
@@ -972,9 +961,6 @@ a svg {
 .gentle-list li {
   padding:7px 0
 }
-.blossom-etiquette+.source-note {
-  margin-top:0
-}
 .status-tag {
   font-size:8px;
   letter-spacing:.12em;
@@ -1031,9 +1017,6 @@ a svg {
   margin-inline:auto;
   color:var(--muted);
   font-size:14px
-}
-.history-closing>.source-note {
-  text-align:left
 }
 .event-feature {
   display:grid;
@@ -1232,9 +1215,6 @@ a svg {
   .fact-list>div {
     grid-template-columns:115px 1fr
   }
-  .source-note {
-    width:calc(100% - 80px)
-  }
   .editorial-grid {
     gap:60px
   }
@@ -1243,9 +1223,6 @@ a svg {
   }
   .event-feature {
     gap:50px
-  }
-  .footer-top {
-    gap:35px
   }
 }
 @media(max-width:900px) {
@@ -1687,12 +1664,13 @@ a svg {
     height:38px
   }
   .site-footer {
-    padding-top:34px
+    padding-top:20px
   }
   .footer-top {
     flex-direction:column;
-    gap:27px;
-    padding-bottom:28px
+    align-items:start;
+    gap:12px;
+    padding-bottom:14px
   }
   .footer-top .brand>span {
     font-size:26px
@@ -1701,17 +1679,17 @@ a svg {
     width:41px
   }
   .footer-top nav {
-    flex-direction:row;
-    gap:8px 21px;
-    flex-wrap:wrap
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;
+    gap:0 16px
   }
   .footer-top nav a {
-    font-size:9px
+    font-size:11px
   }
   .footer-bottom {
     flex-wrap:wrap;
-    gap:17px 25px;
-    font-size:8px
+    gap:10px 20px
   }
   .footer-bottom p {
     flex-basis:100%;
@@ -1823,14 +1801,6 @@ a svg {
   }
   .faqs details>p {
     font-size:12px
-  }
-  .source-note {
-    width:calc(100% - 44px);
-    margin-top:40px;
-    padding-top:20px
-  }
-  .source-note p {
-    font-size:9px
   }
   .bloom-updates {
     flex-direction:column;
@@ -2023,7 +1993,7 @@ html:not(.js) [role=tabpanel] {
     color:black;
     font-size:11pt
   }
-  .wrap,.source-note {
+  .wrap {
     width:100%;
     max-width:none
   }

@@ -47,6 +47,8 @@ Keep visitor-facing guidance evergreen: explain typical seasons, recurring tradi
 
 Keep visible copy useful and spare. Avoid decorative captions, redundant labels, and slogans; add text only when it helps visitors understand a place, choose an action, or plan a visit.
 
+Keep reference lists on the Sources & Image Credits page rather than repeating them above each footer. Retain contextual visitor links for current hours, bloom reports, organizer details, and directions.
+
 The garden’s own Park District page takes precedence over older general park and blossom pages for operating hours. Event-specific admission and participation rules can differ from ordinary visiting rules, so direct visitors to the organizer's current instructions. No automatic calendar or update service is configured; do not label this guide “live.”
 
 Retired pages permanently redirect in Vercel and the local server: `/updates/` to `/history/#garden-plans`, and `/cherry-blossoms/2027/` to `/cherry-blossoms/#bloom-updates`. Configure the same redirects when deploying to another static host. Do not infer construction milestones or an opening date from fundraising copy or a concept plan. Research records remain in `docs/events-and-revitalization-review.txt` and `docs/toro-nagashi-research.txt`.

@@ -39,8 +39,9 @@ For Vercel, `vercel.json` selects the Other framework preset, runs `npm run buil
 - `src/garden-details.mjs` and `public/garden-details.css`: the annotated garden view and compact homepage visual guides.
 - `src/park-map.mjs` and `public/park-map.css`: illustrated park explorer, sourced landmark facts, and responsive hotspot positions.
 - `src/components.mjs`: shared navigation, footer, image markup, metadata, and structured data.
+- `src/navigation.mjs`: tiny menu initializer in the document head; keeps the header stable before deferred page scripts load. Header fallback uses `.nav-ready`, independently of the content's `.js` state.
 - `public/styles.css`: responsive visual system, print styles, and reduced-motion support.
-- `public/main.js`: accessible navigation, keyboard-operated directions tabs, clipboard feedback, and back-to-top behavior. Core content remains available without JavaScript.
+- `public/main.js`: park hotspots, keyboard-operated directions tabs, clipboard feedback, and back-to-top behavior. Core content remains available without JavaScript.
 
 Keep visitor-facing guidance evergreen: explain typical seasons, recurring traditions, locations, and what visitors can expect. Link to the Park District or event organizer for changing hours, closures, dates, registration, and bloom conditions. Do not publish year-specific trackers, expired event programs, or next-edition placeholders. Meaningful historical dates belong in the garden's story; internal research and review dates remain useful for maintenance. The full policy is in `docs/evergreen-content-policy.txt`.
 
@@ -66,7 +67,7 @@ Each map detail panel includes an actual landmark photograph and a link to its c
 
 The original lantern study uses `public/images/toro-nagashi-lantern.webp` and its 768px variant. Its built-in image-generation prompt and provenance are in `docs/toro-nagashi-lantern-prompt.txt`. It illustrates the tradition, not the Chicago event or its supplied materials. The numbered labels remain in HTML.
 
-Fonts are hosted locally. SIL Open Font License copies accompany Italiana and DM Sans in `public/fonts/`.
+Fonts are hosted locally. Zen Old Mincho is used for navigation and headings, Italiana for the wordmark, and DM Sans for body text. The compact [Mincho Latin subset](https://fonts.gstatic.com/s/zenoldmincho/v14/tss0ApVaYytLwxTqcxfMyBveybbwiXw.woff2) comes from Google Fonts and covers the site’s English headings; Georgia supplies any unsupported accented characters. SIL Open Font License copies accompany the fonts in `public/fonts/`. Standard page links use native view transitions where supported, with fading and movement disabled.
 
 ## Checks
 

@@ -26,7 +26,7 @@ try {
       evaluate('document.fonts.ready.then(() => true)');
       evaluate('document.querySelectorAll("img").forEach(image => image.loading = "eager")');
       browser('wait', '--fn', 'Array.from(document.images).every(image => image.complete && image.naturalWidth > 0)');
-      const state = evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,headings:document.querySelectorAll('h1').length,js:document.documentElement.classList.contains('js'),fonts:document.fonts.check('16px Italiana')&&document.fonts.check('16px "DM Sans"')})`);
+      const state = evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,headings:document.querySelectorAll('h1').length,js:document.documentElement.classList.contains('js'),fonts:document.fonts.check('16px Italiana')&&document.fonts.check('18px "Zen Old Mincho"')&&document.fonts.check('16px "DM Sans"')})`);
       assert.equal(state.overflow, false, `Horizontal overflow on ${route} at ${width}px`);
       assert.equal(state.headings, 1, route);
       assert.equal(state.js, true, `Script not running on ${route}`);
@@ -70,8 +70,16 @@ try {
   browser('open', origin + '/?fallback-check=1');
   assert.equal(evaluate('document.documentElement.classList.contains("js")'), false);
   assert.equal(evaluate('[...document.querySelectorAll(".park-place")].filter(panel=>getComputedStyle(panel).display!=="none").length'), 7);
+  // Header enhancement must not wait for, or depend on, the deferred content script.
+  assert.equal(evaluate('document.documentElement.classList.contains("nav-ready")'), true);
+  assert.equal(evaluate('document.querySelector(".site-header").getBoundingClientRect().height'), 66);
+  click('.menu-toggle');
+  assert.equal(evaluate('document.querySelector(".menu-toggle").getAttribute("aria-expanded")'), 'true');
+  browser('press', 'Escape');
+  assert.equal(evaluate('document.activeElement.classList.contains("menu-toggle")'), true);
+  assert.equal(evaluate('document.querySelector(".site-header").getBoundingClientRect().height'), 66);
   browser('network', 'unroute', origin + '/main.js');
-  console.log('PASS map hotspots, keyboard selection, place picker, reduced motion, and script-free facts.');
+  console.log('PASS map hotspots, keyboard selection, place picker, reduced motion, script-free facts, and independent header initialization.');
 
   browser('open', origin + '/updates/');
   assert.equal(evaluate('location.pathname + location.hash'), '/history/#garden-plans');

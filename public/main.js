@@ -38,27 +38,6 @@ document.querySelectorAll('[data-park-explorer]').forEach(explorer => {
   selectPlace(pins[0].dataset.parkPlace, false);
 });
 
-const menu = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#primary-nav');
-function closeMenu({ restoreFocus = false } = {}) {
-  menu?.setAttribute('aria-expanded', 'false');
-  nav?.classList.remove('is-open');
-  if (restoreFocus) menu?.focus();
-}
-menu?.addEventListener('click', () => {
-  const open = menu.getAttribute('aria-expanded') !== 'true';
-  menu.setAttribute('aria-expanded', String(open));
-  nav.classList.toggle('is-open', open);
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') closeMenu({ restoreFocus: true });
-});
-document.addEventListener('click', event => {
-  if (!event.target.closest('.site-header')) closeMenu();
-});
-nav?.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
-matchMedia('(min-width: 901px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
-
 document.querySelectorAll('[data-tabs]').forEach(group => {
   const tabs = [...group.querySelectorAll('[role="tab"]')];
   function activate(tab, focus = false) {

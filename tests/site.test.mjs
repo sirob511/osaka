@@ -37,6 +37,8 @@ test('all internal links, anchors, responsive images, fonts, and scripts resolve
     for (const ref of refs) {
       if (!ref.startsWith('/') && !ref.startsWith('#')) continue;
       const url = new URL(ref.replaceAll('&amp;', '&'), site.origin + path);
+      // Vercel serves the analytics script at deployment time.
+      if (url.pathname === '/_vercel/insights/script.js') continue;
       const target = join(dist, url.pathname, url.pathname.endsWith('/') ? 'index.html' : '');
       assert((await stat(target)).isFile(), `Missing ${ref} on ${path}`);
       if (url.hash) {
